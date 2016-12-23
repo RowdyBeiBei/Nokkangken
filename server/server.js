@@ -8,7 +8,7 @@ const app = express();
 
 const compiler = webpack(webpackConfig);
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 app.use(webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
