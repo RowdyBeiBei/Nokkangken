@@ -5,11 +5,11 @@ module.exports= {
   entry: [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
-    './main.js'
+    './client/main.js'
   ],
   output: {
-    path: __dirname + '/public',
-    publicPath: '/public/',
+    path: __dirname + '/client',
+    publicPath: '/client/',
     filename: 'index.js'
   },
   module: {
