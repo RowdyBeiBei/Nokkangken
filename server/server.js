@@ -10,14 +10,14 @@ const compiler = webpack(webpackConfig);
 
 // app.use(express.static('public'));
 
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  stats: {colors: true}
-}));
-
-app.use(webpackHotMiddleware(compiler, {
-  log: console.log
-}));
+// app.use(webpackDevMiddleware(compiler, {
+//   publicPath: webpackConfig.output.publicPath,
+//   stats: {colors: true}
+// }));
+//
+// app.use(webpackHotMiddleware(compiler, {
+//   log: console.log
+// }));
 
 app.get('/', function(req, res) {
   res.send(200);
