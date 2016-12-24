@@ -1,29 +1,13 @@
 const express = require('express');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config.js');
+var router = require('./router.js');
+
+
 
 const app = express();
 
-const compiler = webpack(webpackConfig);
 
-app.use(express.static('client'));
+require('./middleware.js')(app, express);
 
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  stats: {colors: true}
-}));
-
-app.use(webpackHotMiddleware(compiler, {
-  log: console.log
-}));
-
-app.get('/', function(req, res) {
-  res.send(200);
-  console.log('hi from get /');
-});
-
-
+app.use('/', router);
 
 app.listen(3000, () => {console.log('Nokkangken listening on port 3000');});
