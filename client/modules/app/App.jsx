@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './appActions.js';
 import {bindActionCreators} from 'redux';
+import Landing from '../landing/Landing.jsx';
+
 
 class App extends React.Component {
 
@@ -13,15 +15,10 @@ class App extends React.Component {
     // console.log(this.props.stocks.data[0]);
     // this.props.actions.requestNumbers();
   }
-
-  render () {
+  render() {
     return (
-    <div>
-      <h1>this is the super awesome amazing <strong>Nokkangken</strong> App</h1>
-      <input type='text' onChange={event => this.onInputChange(event.target.value)}></input>
-      <h2>{this.props.stocks.data[0] ? this.props.stocks.data[0].symbol : null}</h2>
-    </div>
-    );
+       <Landing />
+    )
   }
 }
 
