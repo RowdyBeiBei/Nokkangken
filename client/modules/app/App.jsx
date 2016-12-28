@@ -6,6 +6,10 @@ import Landing from '../landing/Landing.jsx';
 
 class App extends React.Component {
 
+  componentDidMount() {
+    this.props.actions.requestLocation.call(window);
+  }
+
   render() {
     return (
        <Landing />
@@ -15,7 +19,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    stocks: state.stocks
+    user: state
   };
 }
 
