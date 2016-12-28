@@ -1,14 +1,10 @@
-import {REQUEST_STOCK} from './appActions.js';
+import {REQUEST_LOCATION} from './appActions.js';
 
-const initialState = {
-  data: []
-}; 
-
-export default function stocks(state = initialState, action) {
+export default function getlocation(state = null, action) {
   switch (action.type) {
-    case REQUEST_STOCK:
+    case REQUEST_LOCATION:
       return {
-        ...state, data: action.payload.data.query.results.quote
+        geolocation: action.payload
       };
     default: return state;
   }

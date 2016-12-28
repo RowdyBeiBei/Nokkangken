@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import appReducer from './modules/app/appReducer.js';
+import locationReducer from './modules/app/appReducer.js';
 
 const rootReducer = combineReducers({
-  stocks: appReducer
+  location: locationReducer
 });
 
 export default rootReducer;
