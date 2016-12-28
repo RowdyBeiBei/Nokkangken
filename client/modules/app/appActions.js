@@ -1,4 +1,5 @@
 export const REQUEST_LOCATION = 'REQUEST_LOCATION';
+<<<<<<< HEAD
 export const REQUEST_NEARBY_LOCATIONS_SENT = 'REQUEST_NEARBY_LOCATIONS_SENT';
 export const REQUEST_NEARBY_LOCATIONS_RECIEVED = 'REQUEST_NEARBY_LOCATIONS_RECIEVED';
 
@@ -15,7 +16,6 @@ export const requestLocation = () => {
       }
     });
   });
-
   return {
     type: REQUEST_LOCATION,
     payload: geolocation

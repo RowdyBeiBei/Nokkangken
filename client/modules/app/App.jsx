@@ -24,6 +24,7 @@ class App extends React.Component {
         longitude: longitude
       }
     });
+
   }
 
   render() {
