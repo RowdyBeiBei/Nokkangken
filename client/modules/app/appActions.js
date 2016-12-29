@@ -1,4 +1,5 @@
 export const REQUEST_LOCATION = 'REQUEST_LOCATION';
+export const REQUEST_NEARBY_LOCATIONS = 'REQUEST_NEARBY_LOCATIONS';
 import axios from 'axios';
 
 export function requestLocation() {
@@ -18,5 +19,19 @@ export function requestLocation() {
   return {
     type: REQUEST_LOCATION,
     payload: geolocation
+  };
+}
+
+export function requestNearbyLocations({latitude, longitude}) {
+  const nearbyLocations = axios.get('/yelp/locations', {
+    params: {
+      latitude: latitude,
+      longitude: longitude
+    }
+  });
+
+  return {
+    type: REQUEST_NEARBY_LOCATIONS,
+    payload: nearbyLocations
   };
 }

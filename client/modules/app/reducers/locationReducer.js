@@ -1,4 +1,4 @@
-import {REQUEST_LOCATION} from './appActions.js';
+import {REQUEST_LOCATION} from '../appActions.js';
 
 export default function getlocation(state = null, action) {
   switch (action.type) {

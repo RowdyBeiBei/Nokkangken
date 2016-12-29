@@ -6,8 +6,14 @@ import Landing from '../landing/Landing.jsx';
 
 class App extends React.Component {
 
-  componentDidMount() {
-    this.props.actions.requestLocation.call(window);
+  componentWillMount() {
+    this.props.actions.requestLocation().then((location) => {
+      this.getNearbyLocations(location.payload);
+    });
+  }
+
+  getNearbyLocations(location) {
+    this.props.actions.requestNearbyLocations(location);
   }
 
   render() {
@@ -19,7 +25,8 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    user: state
+    geolocation: state.location,
+    nearbyLocations: state.nearbyLocations
   };
 }
 
