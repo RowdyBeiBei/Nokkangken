@@ -11,7 +11,7 @@ const getNearbyLocations = (state = null, action) => {
       return {
         isFetching: action.isFetching,
         nearbyLocations: action.nearbyLocations
-      }
+      };
     default: return state;
   }
 };

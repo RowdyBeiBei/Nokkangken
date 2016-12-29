@@ -1,13 +1,11 @@
 import {REQUEST_LOCATION} from '../appActions.js';
 
-const getlocation = (state = null, action) => {
+export default function getlocation(state = null, action) {
   switch (action.type) {
     case REQUEST_LOCATION:
       return {
-        userLocation: action.payload
+        geolocation: action.payload
       };
     default: return state;
   }
-};
-
-export default getlocation;
+}
