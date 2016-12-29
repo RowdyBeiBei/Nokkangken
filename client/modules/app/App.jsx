@@ -25,7 +25,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    geolocation: state.location,
+    userlocation: state.location,
     nearbyLocations: state.nearbyLocations
   };
 }

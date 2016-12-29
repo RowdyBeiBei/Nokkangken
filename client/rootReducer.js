@@ -3,7 +3,7 @@ import locationReducer from './modules/app/reducers/locationReducer.js';
 import nearbyLocationReducer from './modules/app/reducers/nearbyLocationsReducer.js'
 
 const rootReducer = combineReducers({
-  location: locationReducer,
+  userlocation: locationReducer,
   nearbyLocations: nearbyLocationReducer
 });
 
