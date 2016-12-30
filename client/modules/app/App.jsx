@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './appActions.js';
 import {bindActionCreators} from 'redux';
-import Landing from '../landing/Landing.jsx';
 
 class App extends React.Component {
 
@@ -18,22 +17,25 @@ class App extends React.Component {
 
   render() {
     return (
-       <Landing />
+      <div>
+        <h1>hi</h1>
+        {this.props.children}
+      </div>
     );
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
-    userlocation: state.location,
+    userlocation: state.userLocation,
     nearbyLocations: state.nearbyLocations
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,6 +1,6 @@
 import {REQUEST_NEARBY_LOCATIONS} from '../appActions.js';
 
-export default function getNearbyLocations(state = null, action) {
+const getNearbyLocations = (state = null, action) => {
   switch (action.type) {
     case REQUEST_NEARBY_LOCATIONS:
       return {
@@ -8,4 +8,6 @@ export default function getNearbyLocations(state = null, action) {
       };
     default: return state;
   }
-}
+};
+
+export default getNearbyLocations;

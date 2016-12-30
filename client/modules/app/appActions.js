@@ -2,7 +2,7 @@ export const REQUEST_LOCATION = 'REQUEST_LOCATION';
 export const REQUEST_NEARBY_LOCATIONS = 'REQUEST_NEARBY_LOCATIONS';
 import axios from 'axios';
 
-export function requestLocation() {
+export const requestLocation = () => {
   const geolocation = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition((location, err) => {
       if(err) {
@@ -20,9 +20,9 @@ export function requestLocation() {
     type: REQUEST_LOCATION,
     payload: geolocation
   };
-}
+};
 
-export function requestNearbyLocations({latitude, longitude}) {
+export const requestNearbyLocations = ({latitude, longitude}) => {
   const nearbyLocations = axios.get('/yelp/locations', {
     params: {
       latitude: latitude,
@@ -34,4 +34,4 @@ export function requestNearbyLocations({latitude, longitude}) {
     type: REQUEST_NEARBY_LOCATIONS,
     payload: nearbyLocations
   };
-}
+};
