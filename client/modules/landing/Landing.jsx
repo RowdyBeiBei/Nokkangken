@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+
+
 class Landing extends React.Component {
 	  render() {
 		   return (

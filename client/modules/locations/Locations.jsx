@@ -45,8 +45,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-
-
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
