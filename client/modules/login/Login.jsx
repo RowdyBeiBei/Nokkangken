@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './loginActions.js';
 import {bindActionCreators} from 'redux';
+import {hashHistory} from 'react-router';
+
 
 class Login extends React.Component {
 
@@ -15,7 +17,10 @@ class Login extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.actions.login(this.props.credentials);
+    this.props.actions.login(this.props.credentials)
+    .then(() => {
+      hashHistory.push('/home');
+    });
     event.target.reset();
   }
 

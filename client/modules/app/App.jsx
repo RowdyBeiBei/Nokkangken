@@ -6,7 +6,8 @@ import {bindActionCreators} from 'redux';
 class App extends React.Component {
 
   componentWillMount() {
-    this.props.actions.requestLocation().then((location) => {
+    this.props.actions.requestLocation()
+    .then((location) => {
       this.getNearbyLocations(location.payload);
     });
   }

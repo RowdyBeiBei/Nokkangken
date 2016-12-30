@@ -1,8 +1,8 @@
 {
-  "Nick": {
+  "nick": {
     "username": "Nick",
     "password": "Nick",
-    "picUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwicuoC8rJrRAhUN3GMKHWOuDXcQjRwIBw&url=http%3A%2F%2Fwww.rawstory.com%2F2015%2F12%2Fdonald-trump-tells-supporters-he-would-have-saved-paris-from-terrorists-with-his-ankle-gun%2F&bvm=bv.142059868,d.cGc&psig=AFQjCNEDp61FCsoaUJipnNZrt1HAMY5Itg&ust=1483133313592135",
+    "picUrl": "http://s.newsweek.com/sites/www.newsweek.com/files/2016/06/19/0620trumppolicies01.jpg",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   "Dan": {

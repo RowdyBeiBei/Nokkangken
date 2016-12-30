@@ -8,6 +8,7 @@ import Landing from './modules/landing/Landing.jsx';
 import Login from './modules/login/Login.jsx';
 import Signup from './modules/signup/Signup.jsx';
 import Locations from './modules/locations/Locations.jsx';
+import Home from './modules/home/Home.jsx';
 
 
 const store = configureStore();
@@ -22,7 +23,8 @@ ReactDOM.render(
         <Route path='/login' component={Login}/>
       </Route>
       <Route path='/home' component={App}>
-       <Route path='/locations' component={Locations}/>
+        <IndexRoute component={Home}/>
+        <Route path='/locations' component={Locations}/>
       </Route>
     </Router>
   </Provider>,
