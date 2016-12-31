@@ -2,15 +2,21 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './locationsActions.js';
 import {bindActionCreators} from 'redux';
+import {Link} from 'react-router';
 
 
 class Locations extends React.Component {
 
 
+  renderNearbyLocations() {
+    
+  }
+
   render() {
     return (
       <div>
         <h2>This is the loactions page</h2>
+        <Link to='/home'><button>Go Home</button></Link>
       </div>
     );
   }
@@ -18,7 +24,7 @@ class Locations extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    // business location information goes here
+    nearbyLocations: state.nearbyLocations
   };
 };
 
