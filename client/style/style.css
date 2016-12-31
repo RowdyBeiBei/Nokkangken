@@ -5,9 +5,11 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment:fixed;
+  width: 100vw;
+  height: 100vh;
 }
 
-.header{
+.header {
   /*font-family: 'Righteous', cursive;*/
   /*font-family: 'Fredoka One', cursive;*/
  /*font-family: 'Baloo Thambi', cursive;*/
@@ -31,4 +33,13 @@ body {
 
 .btn {
   float: right;
+}
+
+.loginDiv {
+  border: medium solid black;
+}
+
+.profilePic {
+  height: 20%;
+  width: 20%;
 }

@@ -1,8 +1,14 @@
 import {combineReducers} from 'redux';
-import appReducer from './modules/app/appReducer.js';
+import locationReducer from './modules/app/reducers/locationReducer.js';
+import nearbyLocationReducer from './modules/app/reducers/nearbyLocationsReducer.js'
+import credentialUpdateReducer from './modules/login/reducers/credentialUpdateReducer.js'
+import userReducer from './modules/login/reducers/userReducer.js'
 
 const rootReducer = combineReducers({
-  stocks: appReducer
+  userLocation: locationReducer,
+  nearbyLocations: nearbyLocationReducer,
+  credentials: credentialUpdateReducer,
+  user: userReducer
 });
 
 export default rootReducer;

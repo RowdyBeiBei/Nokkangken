@@ -11,15 +11,15 @@ const compiler = webpack(webpackConfig);
 
 
 
-module.exports = function(app, express) { 
+module.exports = function(app, express) {
   app.use('/', express.static(path.join(__dirname, '../client')));
-     
- 
+
+
   app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     stats: {colors: true}
   }));
- 
+
   app.use(webpackHotMiddleware(compiler, {
     log: console.log
   }));
@@ -29,13 +29,15 @@ module.exports = function(app, express) {
   //   res.sendFile(path.join(__dirname, ''));
   // });
   //this might need to be more like the above comment, not sure
-  app.get('/', function(req, res) {
-    res.send(200);
-    console.log('hi from get /');
-  }); 
+
+  //this ↓ was just a test route not in use n e more
+
+  // app.get('/', function(req, res) {
+  //   res.send(200);
+  //   console.log('hi from get /');
+  // });
 
   app.use(morgan('dev'));
   app.use(bodyParser.json());
-  
-};
 
+};
