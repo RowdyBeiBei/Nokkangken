@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 
 
-
 class Landing extends React.Component {
 	  render() {
 		   return (
@@ -13,6 +12,7 @@ class Landing extends React.Component {
 	 					<Link to='login'><button>Log In</button></Link>
 	 					<Link><button>SignUp</button></Link>
 			  	</div>
+					{this.props.children}
 				 </div>
 			);
     }

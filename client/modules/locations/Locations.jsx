@@ -20,13 +20,11 @@ class Locations extends React.Component {
     });
   }
 
+
   renderLoading() {
-    return (
-      <div>
-        <Loading type='spokes'/>
-      </div>
-    );
   }
+
+
 
   render() {
     return (
