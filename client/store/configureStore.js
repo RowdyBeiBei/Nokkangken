@@ -2,7 +2,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
 import rootReducer from '../rootReducer.js';
 
-export default function configureStore(initialState) {
+const configureStore = (initialState) => {
   const store = createStore(
     rootReducer,
     initialState,
@@ -18,4 +18,6 @@ export default function configureStore(initialState) {
     });
   }
   return store;
-}
+};
+
+export default configureStore;
