@@ -43,3 +43,12 @@ body {
   height: 20%;
   width: 20%;
 }
+
+.locationDiv {
+  border: medium solid black;
+}
+
+.locationImg {
+  height: 20%;
+  width: 20%;
+}
