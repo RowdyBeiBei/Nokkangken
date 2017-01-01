@@ -1,11 +1,17 @@
-import {REQUEST_NEARBY_LOCATIONS} from '../appActions.js';
+import {REQUEST_NEARBY_LOCATIONS_SENT} from '../appActions.js';
+import {REQUEST_NEARBY_LOCATIONS_RECIEVED} from '../appActions.js';
 
 const getNearbyLocations = (state = null, action) => {
   switch (action.type) {
-    case REQUEST_NEARBY_LOCATIONS:
+    case REQUEST_NEARBY_LOCATIONS_SENT:
       return {
-        nearbyLocations: action.payload.data.businesses
+        isFetching: action.isFetching
       };
+    case REQUEST_NEARBY_LOCATIONS_RECIEVED:
+      return {
+        isFetching: action.isFetching,
+        nearbyLocations: action.nearbyLocations
+      }
     default: return state;
   }
 };

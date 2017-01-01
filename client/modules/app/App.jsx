@@ -2,18 +2,28 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './appActions.js';
 import {bindActionCreators} from 'redux';
+import axios from 'axios';
+
+
 
 class App extends React.Component {
 
   componentWillMount() {
-    this.props.actions.requestLocation()
-    .then((location) => {
-      this.getNearbyLocations(location.payload);
+    this.props.actions.requestNearbyLocationsSent();
+    this.props.actions.requestLocation().then((location) => {
+      return this.getNearbyLocations(location.payload);
+    }).then((nearbyLocations) => {
+      return this.props.actions.requestNearbyLocationsRecieved(nearbyLocations);
     });
   }
 
-  getNearbyLocations(location) {
-    this.props.actions.requestNearbyLocations(location);
+  getNearbyLocations({longitude, latitude}) {
+    return axios.get('/yelp/locations', {
+      params: {
+        latitude: latitude,
+        longitude: longitude
+      }
+    });
   }
 
   render() {
@@ -25,6 +35,8 @@ class App extends React.Component {
     );
   }
 }
+
+
 
 const mapStateToProps = (state) => {
   return {
