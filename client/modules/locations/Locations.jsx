@@ -20,11 +20,13 @@ class Locations extends React.Component {
     });
   }
 
-
   renderLoading() {
+    return (
+      <div>
+        <Loading type='spokes'/>
+      </div>
+    );
   }
-
-
 
   render() {
     return (
@@ -42,6 +44,8 @@ const mapStateToProps = (state) => {
     nearbyLocations: state.nearbyLocations
   };
 };
+
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
