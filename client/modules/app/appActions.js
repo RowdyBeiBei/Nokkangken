@@ -2,6 +2,8 @@ export const REQUEST_LOCATION = 'REQUEST_LOCATION';
 export const REQUEST_NEARBY_LOCATIONS_SENT = 'REQUEST_NEARBY_LOCATIONS_SENT';
 export const REQUEST_NEARBY_LOCATIONS_RECIEVED = 'REQUEST_NEARBY_LOCATIONS_RECIEVED';
 
+
+
 export const requestLocation = () => {
   const geolocation = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition((location, err) => {
@@ -15,7 +17,6 @@ export const requestLocation = () => {
       }
     });
   });
-
   return {
     type: REQUEST_LOCATION,
     payload: geolocation

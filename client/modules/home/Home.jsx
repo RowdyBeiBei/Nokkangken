@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
 
 
+
 class Home extends React.Component {
 
   render() {
@@ -22,7 +23,6 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     user: state.user
   };
