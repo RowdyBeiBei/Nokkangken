@@ -5,7 +5,7 @@ export const requestBusinessInfoSent = () => {
   return {
     type: REQUEST_BUSINESS_INFO_SENT,
     isFetching: true,
-    businessInfo: null
+    locationInfo: null
   };
 };
 
@@ -13,6 +13,6 @@ export const requestBusinessInfoRecieved = (businessInfo) => {
   return {
     type: REQUEST_BUSINESS_INFO_RECIEVED,
     isFetching: false,
-    businessInfo: businessInfo.data
+    locationInfo: businessInfo.data
   };
 };

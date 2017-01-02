@@ -10,7 +10,7 @@ class App extends React.Component {
 
   componentWillMount() {
     this.props.actions.requestNearbyLocationsSent();
-    this.props.actions.requestLocation()
+    this.props.actions.requestUserLocation()
     .then((location) => {
       return this.getNearbyLocations(location.payload);
     }).then((nearbyLocations) => {
