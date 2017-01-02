@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './locationsActions.js';
 import {bindActionCreators} from 'redux';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import Loading from 'react-loading';
 import axios from 'axios';
 
@@ -24,6 +24,7 @@ class Locations extends React.Component {
     .then((businessInfo) => {
       return this.props.actions.requestBusinessInfoRecieved(businessInfo);
     });
+    hashHistory.push('/selectedLocation');
   }
 
   renderNearbyLocations() {

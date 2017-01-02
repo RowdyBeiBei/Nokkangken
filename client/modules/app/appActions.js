@@ -1,10 +1,10 @@
-export const REQUEST_LOCATION = 'REQUEST_LOCATION';
+export const REQUEST_USER_LOCATION = 'REQUEST_USER_LOCATION';
 export const REQUEST_NEARBY_LOCATIONS_SENT = 'REQUEST_NEARBY_LOCATIONS_SENT';
 export const REQUEST_NEARBY_LOCATIONS_RECIEVED = 'REQUEST_NEARBY_LOCATIONS_RECIEVED';
 
 
 
-export const requestLocation = () => {
+export const requestUserLocation = () => {
   const geolocation = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition((location, err) => {
       if(err) {
@@ -18,7 +18,7 @@ export const requestLocation = () => {
     });
   });
   return {
-    type: REQUEST_LOCATION,
+    type: REQUEST_USER_LOCATION,
     payload: geolocation
   };
 };

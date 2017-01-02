@@ -52,3 +52,6 @@ body {
   height: 20%;
   width: 20%;
 }
+.selectedLocation {
+  border: medium solid black;
+}
