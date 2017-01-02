@@ -10,7 +10,7 @@ class Landing extends React.Component {
 	 					<h1 className='header'> Nokkangken </h1>
 	 					<p className='message'> Meet someone with the chance created by yourself</p>
 	 					<Link to='login'><button>Log In</button></Link>
-	 					<Link><button>SignUp</button></Link>
+	 					<Link to='signup'><button>SignUp</button></Link>
 			  	</div>
 					{this.props.children}
 				 </div>

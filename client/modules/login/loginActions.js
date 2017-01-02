@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const updateUsername = (credentialValue) => {
   return {
-      type: UPDATE_USERNAME,
+    type: UPDATE_USERNAME,
     payload: credentialValue
   };
 };
