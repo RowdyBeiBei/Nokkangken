@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as Actions from './signupActions.js';
 import {bindActionCreators} from 'redux';
 import {hashHistory} from 'react-router';
-import {Modal} from 'react-bootstrap';
 
 
 class Signup extends React.Component {
@@ -28,41 +27,8 @@ class Signup extends React.Component {
     event.target.reset();
   }
 
-  // getInitialState() {
-  //   return { showModal: false };
-  // }
-  //
-  // close() {
-  //   this.setState({ showModal: false });
-  // }
-  //
-  // open() {
-  //   this.setState({ showModal: true });
-  // }
-
-
   render() {
     return (
-    //   <form onSubmit = {(event)=> {this.onSubmit(event)}}>
-    //     <h2>This is the signup page</h2>
-    //       <div className="form-group">
-    //         <label htmlFor="exampleInputEmail1">Name</label>
-    //         <input className='form-control' type='text' name='username' placeholder='username' onChange={(event) => {this.onChange(event);}}/>
-    //       </div>
-    //       <div className="form-group">
-    //         <label htmlFor="exampleInputPassword1">Password</label>
-    //         <input className='form-control' type='password' name='password' placeholder='password' onChange={(event) => {this.onChange(event);}}/>
-    //       </div>
-    //       <div className="form-group">
-    //         <label htmlFor="exampleInputFile">retype password</label>
-    //         <input className='form-control' type='\assword' placeholder='retype password'/>
-    //       </div>
-    //       <div className="form-group">
-    //         <label htmlFor="exampleInputFile">Bio</label>
-    //         <textarea className='form-control' placeholder='bio' name='bio' onChange={(event) => {this.onChange(event);}}/>
-    //       </div>
-    //        <button type="submit" className="btn btn-primary">Submit</button>
-    //  </form>
     <div className="container" >
         <div className="row mt4">
         <div className="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
@@ -71,7 +37,7 @@ class Signup extends React.Component {
 			    		<h3 className="panel-title">Sign Up Form</h3>
             </div>
             <div className="panel-body">
-			    		<form role="form">
+			    		<form role="form" onSubmit={(event) => {this.onSubmit(event);}}>
 			    			<div className="row">
 			    				<div className="col-md-12">
 			    					<div className="form-group">
