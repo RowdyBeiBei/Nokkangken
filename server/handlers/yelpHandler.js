@@ -10,12 +10,14 @@ module.exports = {
       },
       qs: {
         latitude: req.query.latitude,
-        longitude: req.query.longitude
+        longitude: req.query.longitude,
+        open_at: req.query.open_at
       }
     };
     request(options, (err, response, body) => {
       res.set({'Content-type': 'application/json'});
       if(err) {
+        console.log('this is an err from getNearbyLocations: ', err);
         res.status(400).send(err);
       }else {
         res.status(200).send(body);

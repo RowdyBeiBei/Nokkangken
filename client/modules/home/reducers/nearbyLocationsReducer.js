@@ -1,5 +1,5 @@
-import {REQUEST_NEARBY_LOCATIONS_SENT} from '../appActions.js';
-import {REQUEST_NEARBY_LOCATIONS_RECIEVED} from '../appActions.js';
+import {REQUEST_NEARBY_LOCATIONS_SENT} from '../homeActions.js';
+import {REQUEST_NEARBY_LOCATIONS_RECIEVED} from '../homeActions.js';
 
 
 const getNearbyLocations = (state = null, action) => {

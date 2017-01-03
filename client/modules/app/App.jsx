@@ -9,25 +9,28 @@ import axios from 'axios';
 class App extends React.Component {
 
   componentWillMount() {
-    this.props.actions.requestNearbyLocationsSent();
-    this.props.actions.requestUserLocation()
-    .then((location) => {
-      return this.getNearbyLocations(location.payload);
-    }).then((nearbyLocations) => {
-      return this.props.actions.requestNearbyLocationsRecieved(nearbyLocations);
-    }).catch((err) => {
-      console.log(err);
+    this.props.actions.requestUserLocationSent();
+    this.getUserLocation()
+    .then((geolocation) => {
+      this.props.actions.requestUserLocationRecieved(geolocation);
     });
   }
 
-  getNearbyLocations({longitude, latitude}) {
-    return axios.get('/yelp/locations', {
-      params: {
-        latitude: latitude,
-        longitude: longitude
-      }
+  getUserLocation() {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition((location, err) => {
+        if(err) {
+          reject(err);
+        }else {
+          resolve({
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude
+          });
+        }
+      });
     });
   }
+
 
   render() {
     return (
@@ -39,18 +42,10 @@ class App extends React.Component {
 }
 
 
-
-const mapStateToProps = (state) => {
-  return {
-    userlocation: state.userLocation,
-    nearbyLocations: state.nearbyLocations
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
