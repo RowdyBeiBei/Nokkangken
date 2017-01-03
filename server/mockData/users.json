@@ -22,5 +22,11 @@
     "password": "Wasif",
     "picUrl": "http://cdn.pinknews.co.uk/images/2016/08/B5JeGbxIAAABkc1_640x345_acf_cropped-1.png",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "Niko": {
+    "username": "Niko",
+    "password": "Niko",
+    "picUrl": "https://s-media-cache-ak0.pinimg.com/564x/9e/8d/af/9e8daf0ff00ee0f6483cee1c70cac85f.jpg",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 }
