@@ -18,13 +18,13 @@ const root = document.getElementById('app');
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path='/' component={Landing}>
-        <Route path='/signup' component={Signup}/>
+     <Router history={hashHistory}>
+       <Route path='/' component={Landing}>
+         <Route path='/signup' component={Signup}/>
         <Route path='/login' component={Login}/>
-      </Route>
-      <Route path='/home' component={App}>
-        <IndexRoute component={Home}/>
+       </Route>
+       <Route path='/home' component={App}>
+         <IndexRoute component={Home}/>
         <Route path='/locations' component={Locations}/>
         <Route path='/selectedLocation' component={SelectedLocation}/>
       </Route>
