@@ -36,8 +36,6 @@ body {
   background-repeat: repeat-x;
   border-color: #133783 #133783 #091b40;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-facebook:hover,
@@ -87,6 +85,7 @@ body {
 .selectedLocation {
   border: medium solid black;
 }
+
 
 .centered-form .panel{
 	background: rgba(255, 255, 255, 0.8);
