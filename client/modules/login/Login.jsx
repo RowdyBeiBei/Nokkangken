@@ -26,12 +26,37 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className='loginDiv'>
-        <form onSubmit={(event) => {this.onSubmit(event);}}>
-          <input className='username' name='username' placeholder='username' type='text' onChange={(event) => {this.onChange(event);}}/>
-          <input className='password' name='password' placeholder='password' type='password' onChange={(event) => {this.onChange(event);}}/>
-          <button type='submit'>Submit</button>
-        </form>
+      <div className="container">
+        <div className="row mt4">
+          <div className="col-md-4 col-md-offset-4">
+            <div className="panel panel-default">
+              <div className="panel-heading">
+                <h3 className="panel-title">Login via site</h3>
+              </div>
+              <div className="panel-body">
+                <form accept-charset="UTF-8" role="form" onSubmit={(event) => {this.onSubmit(event);}}>
+                  <fieldset>
+                    <div className="form-group">
+                      <input className="form-control" name='username' placeholder="user name"  type="text" onChange={(event) => {this.onChange(event);}} />
+                    </div>
+                    <div className="form-group">
+                      <input className="form-control" placeholder="Password" name="password" type="password" onChange={(event) => {this.onChange(event);}}/>
+                    </div>
+                    <div className="checkbox">
+                      <label>
+                        <input name="remember" type="checkbox" value="Remember Me"/> Remember Me
+                      </label>
+                    </div>
+                    <input className="btn btn-lg btn-success btn-block" type="submit" value="Login"/>
+                  </fieldset>
+                </form>
+
+                <center><h4>OR</h4></center>
+                <input className="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
