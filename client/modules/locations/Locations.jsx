@@ -33,7 +33,7 @@ class Locations extends React.Component {
         <div  className="col-md-4 locationDiv"  key={location.id}>
           <hr/>
           <div>
-            <button className="alert alert-danger" onClick={() => {this.onClick(location.id)}}>{location.name}</button>
+            <button className="alert alert-danger truncate" onClick={() => {this.onClick(location.id)}}>{location.name}</button>
             <div>
               <input className="checkBox pull-right" type="checkbox"  />
               <img className="img-responsive" src={location.image_url}/>

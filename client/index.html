@@ -13,12 +13,23 @@
   </head>
   <body>
     <!-- facebook SDK setup -->
-    <!-- <script>
+    <script>
         window.fbAsyncInit = function() {
+          console.log("fbInit");
           FB.init({
             appId      : '166781447136758',
             xfbml      : true,
             version    : 'v2.8'
+          });
+
+          FB.getLoginStatus(function(response){
+            console.log("response", response);
+            if (response.status === 'connected') {
+              console.log('Logged in.');
+            }
+            else {
+              FB.login();
+            }
           });
         };
 
@@ -29,10 +40,10 @@
            js.src = "//connect.facebook.net/en_US/sdk.js";
            fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));
-  </script> -->
-
+  </script>
     <div id='app'>
-   </div>
+    </div>
+
     <script src='client/index.js'></script>
   </body>
 </html>
