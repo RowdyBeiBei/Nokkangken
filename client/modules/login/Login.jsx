@@ -34,7 +34,7 @@ class Login extends React.Component {
                 <h3 className="panel-title">Login via site</h3>
               </div>
               <div className="panel-body">
-                <form accept-charset="UTF-8" role="form" onSubmit={(event) => {this.onSubmit(event);}}>
+                <form acceptCharset="UTF-8" role="form" onSubmit={(event) => {this.onSubmit(event);}}>
                   <fieldset>
                     <div className="form-group">
                       <input className="form-control" name='username' placeholder="user name"  type="text" onChange={(event) => {this.onChange(event);}} />
