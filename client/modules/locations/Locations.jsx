@@ -30,14 +30,19 @@ class Locations extends React.Component {
   renderNearbyLocations() {
     return this.props.nearbyLocations.nearbyLocations.map((location) => {
       return (
-        <div className='locationDiv' key={location.id} onClick={() => {this.onClick(location.id)}}>
-          <h2>{location.name}</h2>
-          <img className='locationImg' src={location.image_url}/>
+        <div  className="col-md-4 locationDiv"  key={location.id}>
+          <hr/>
+          <div>
+            <button className="alert alert-danger" onClick={() => {this.onClick(location.id)}}>{location.name}</button>
+            <div>
+              <input className="checkBox pull-right" type="checkbox"  />
+              <img className="img-responsive" src={location.image_url}/>
+            </div>
+          </div>
         </div>
       );
     });
   }
-
 
   renderLoading() {
     return (
@@ -49,10 +54,17 @@ class Locations extends React.Component {
 
   render() {
     return (
-      <div >
-        <h2>This is the loactions page</h2>
-        {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-        <Link to='/home'><button>Go Home</button></Link>
+      <div>
+        <Link to='/home'><button className="btn btn-primary mb3 mx1">Go Home</button></Link>
+
+        <h2>Check Out the Places Near You</h2>
+        <small>(Click the Name Button for More Info)</small>
+
+        <div className="container text-center">
+          <div className="row">
+            {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
+          </div>
+        </div>
       </div>
     );
   }
@@ -63,9 +75,6 @@ const mapStateToProps = (state) => {
     nearbyLocations: state.nearbyLocations
   };
 };
-
-
-
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)

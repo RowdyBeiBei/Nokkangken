@@ -4,11 +4,7 @@ import {Link} from 'react-router';
 import Loading from 'react-loading';
 
 
-
-
-
 class SelectedLocation extends React.Component {
-
 
   renderSelectedLocation() {
     return (
@@ -30,9 +26,9 @@ class SelectedLocation extends React.Component {
   render() {
     return (
       <div>
+        <button className="btn btn-primary mb3 mx1">back to locations</button>
         {this.props.selectedLocation.isFetching ? this.renderLoading() : this.renderSelectedLocation()}
         <Link to='/locations'>
-          <button>back to locations</button>
         </Link>
       </div>
     );

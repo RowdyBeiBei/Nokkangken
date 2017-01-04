@@ -22,6 +22,63 @@ body {
 .btn {
   font-family: 'Baloo Thambi', cursive;
 }
+
+.hero-container {
+    font-size: 24px;
+    color: #fff;
+    background: #696;
+    width: 100%;
+}
+
+.login {
+  margin-bottom: 10px;
+}
+
+.loginDiv {
+  border: medium solid black;
+}
+
+.profilePic {
+  height: 20%;
+  width: 20%;
+}
+
+.locationDiv {
+  position: relative;
+  border: medium solid black;
+  width: 32%;
+  height: 32%;
+}
+.img-responsive {
+  height: 223.67px;
+  width: 336.9px;
+}
+.alert  {
+  background-color: lightblue;
+  border-color: lightblue;
+  width: 100%;
+}
+.checkBox {
+  position: absolute;
+  float: right;
+  width: 10%;
+  height: 10%;
+}
+
+.locationImg {
+  height: 20%;
+  width: 20%;
+}
+.selectedLocation {
+  border: medium solid black;
+}
+
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
 .btn-facebook {
   color: #ffffff;
   -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -52,42 +109,4 @@ body {
 .btn-facebook:active,
 .btn-facebook.active {
   background-color: #0d2456 \9 !important;
-}
-
-.hero-container {
-    font-size: 24px;
-    color: #fff;
-    background: #696;
-    width: 100%;
-}
-
-.login {
-  margin-bottom: 10px;
-}
-
-.loginDiv {
-  border: medium solid black;
-}
-
-.profilePic {
-  height: 20%;
-  width: 20%;
-}
-
-.locationDiv {
-  border: medium solid black;
-}
-
-.locationImg {
-  height: 20%;
-  width: 20%;
-}
-.selectedLocation {
-  border: medium solid black;
-}
-
-
-.centered-form .panel{
-	background: rgba(255, 255, 255, 0.8);
-	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
