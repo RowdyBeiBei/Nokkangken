@@ -37,19 +37,3 @@ export const login = (username, userid, userpicture) => {
     payload: user
   };
 };
-
-// export const fblogin = () => {
-    // FB.getLoginStatus(function(response) {
-    // if (response.status === 'connected') {
-    //   var accessToken = response.authResponse.accessToken;
-    // }
-    // });
-    //
-    // const fb = axios.get({
-    //   method: 'get',
-    //   url: '/auth/facebook',
-    //   host: 'graph.facebook.com',
-    //   params: accessToken
-    // });
-
-// };
