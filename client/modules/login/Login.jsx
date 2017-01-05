@@ -50,13 +50,6 @@ class Login extends React.Component {
     // event.target.reset();
   }
 
-  // onclick(event) {
-  //   handleFblogin(event);
-  //   onSubmit(event);
-  //
-  // }
-
-
 
   render() {
     return (

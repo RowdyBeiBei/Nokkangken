@@ -1,4 +1,4 @@
-/* Basscss Margin 
+/* Basscss Margin
 https://github.com/basscss/basscss/tree/master/modules/margin
 */
 
@@ -54,7 +54,15 @@ https://github.com/basscss/basscss/tree/master/modules/margin
 
 .mx1 {
   margin-left: .5rem;
-  margin-right: .5rem
+  margin-right: .5rem;
+
+}
+
+.mx {
+  margin-left: 40rem;
+  margin-right: 40rem;
+  margin-left: 40rem;
+  margin-right: 40rem; 
 }
 
 .my1 {
