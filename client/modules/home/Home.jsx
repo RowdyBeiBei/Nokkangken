@@ -52,9 +52,9 @@ class Home extends React.Component {
               </div>
               <div className="info">
                 <div className="title">{this.props.user.username}</div>
-
                 <div className="desc">{this.props.user.bio}</div>
               </div>
+              <div>
               <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)}/>
             <Link to='/locations'><button className='btn btn-primary mb3'>browse events</button></Link>
             </div>

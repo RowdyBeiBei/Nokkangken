@@ -1,5 +1,6 @@
 export const UPDATE_USERNAME = 'UPDATE_USERNAME';
-export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const UPDATE_USERID = 'UPDATE_USERID';
+export const UPDATE_USERPICTURE = 'UPDATE_USERPICTURE';
 export const LOGIN = 'LOGIN';
 import axios from 'axios';
 
@@ -10,18 +11,25 @@ export const updateUsername = (credentialValue) => {
   };
 };
 
-export const updatePassword = (credentialValue) => {
+export const updateUserid = (credentialValue) => {
   return {
-    type: UPDATE_PASSWORD,
+    type: UPDATE_USERID,
+    payload: credentialValue
+  };
+};
+export const updateUserpicture = (credentialValue) => {
+  return {
+    type: UPDATE_USERPICTURE,
     payload: credentialValue
   };
 };
 
-export const login = ({username, password}) => {
+export const login = (username, userid, userpicture) => {
   const user = axios.get('/auth/login', {
     params: {
       username: username,
-      password: password
+      userid: userid,
+      userpicture: userpicture
     }
   });
   return {
