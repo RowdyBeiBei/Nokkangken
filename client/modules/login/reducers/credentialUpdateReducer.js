@@ -1,5 +1,6 @@
 import {UPDATE_USERNAME} from '../loginActions.js';
-import {UPDATE_PASSWORD} from '../loginActions.js';
+import {UPDATE_USERID} from '../loginActions.js';
+import {UPDATE_USERPICTURE} from '../loginActions.js';
 import {LOGIN} from '../loginActions.js';
 
 
@@ -10,13 +11,18 @@ const getCredentials = (state = null, action) => {
         ...state,
         username: action.payload
       };
-    case UPDATE_PASSWORD:
+    case UPDATE_USERID:
       return {
         ...state,
-        password: action.payload
+        userid: action.payload
       };
+      case UPDATE_USERPICTURE:
+        return {
+         ...state,
+         userpicture: action.payload
+        };
     case LOGIN:
-      return {};
+      return action.payload;
     default: return state;
   }
 };

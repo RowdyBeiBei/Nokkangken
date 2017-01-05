@@ -4,8 +4,6 @@ const userData = (state = null, action) => {
   switch (action.type) {
     case LOGIN:
       return action.payload.data;
-    // case SIGNUP:
-    //   return action.payload.data;
     default: return state;
   }
 
