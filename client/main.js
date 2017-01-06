@@ -9,7 +9,8 @@ import Login from './modules/login/Login.jsx';
 import Signup from './modules/signup/Signup.jsx';
 import Locations from './modules/locations/Locations.jsx';
 import Home from './modules/home/Home.jsx';
-import SelectedLocation from './modules/selectedLocation/SelectedLocation.jsx'
+import SelectedLocation from './modules/selectedLocation/SelectedLocation.jsx';
+import ProspectiveMatches from './modules/prospectiveMatches/ProspectiveMatches.jsx';
 
 
 const store = configureStore();
@@ -20,13 +21,14 @@ ReactDOM.render(
   <Provider store={store}>
      <Router history={hashHistory}>
        <Route path='/' component={Landing}>
-         <Route path='/signup' component={Signup}/>
+        <Route path='/signup' component={Signup}/>
         <Route path='/login' component={Login}/>
        </Route>
        <Route path='/home' component={App}>
-         <IndexRoute component={Home}/>
+        <IndexRoute component={Home}/>
         <Route path='/locations' component={Locations}/>
         <Route path='/selectedLocation' component={SelectedLocation}/>
+        <Route path='/prospectiveMatches' component={ProspectiveMatches}/>
       </Route>
     </Router>
   </Provider>,

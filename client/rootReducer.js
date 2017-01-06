@@ -6,6 +6,8 @@ import userReducer from './modules/login/reducers/userReducer.js';
 import signupReducer from './modules/signup/reducers/signupReducer.js';
 import locationInfoReducer from './modules/locations/reducers/locationInfoReducer.js'
 import timePreferanceReducer from './modules/home/reducers/timePreferanceReducer.js';
+import prospectiveMatchesReducer from './modules/locations/reducers/prospectiveMatchesReducer.js';
+import activeProspectiveMatchReducer from './modules/prospectiveMatches/reducers/activeProspectiveMatchReducer.js';
 
 const rootReducer = combineReducers({
   userLocation: userLocationReducer,
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
   user: userReducer,
   selectedLocation: locationInfoReducer,
   signupInfo: signupReducer,
-  timePreferance: timePreferanceReducer
+  timePreferance: timePreferanceReducer,
+  prospectiveMatches: prospectiveMatchesReducer,
+  activeProspectiveMatch: activeProspectiveMatchReducer
 });
 
 export default rootReducer;
