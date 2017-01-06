@@ -10,6 +10,19 @@ import axios from 'axios';
 
 class Locations extends React.Component {
 
+  findMatches() {
+    this.props.actions.requestProspectiveMatchesSent();
+    this.getProspectiveMatches()
+    .then((matches) => {
+      this.props.actions.requestProspectiveMatchesRecieved(matches);
+      hashHistory.push('/prospectiveMatches');
+    });
+  }
+
+  getProspectiveMatches() {
+    return axios.get('/prospectiveMatches')
+  }
+
   getBusinessInfo(businessId) {
     return axios.get('/yelp/selectedLocation', {
       params: {
@@ -56,6 +69,7 @@ class Locations extends React.Component {
     return (
       <div>
         <Link to='/home'><button className="btn btn-primary mb3 mx1">Go Home</button></Link>
+        <button onClick={() => {this.findMatches();}}>Find Matches</button>
 
         <h2>Check Out the Places Near You</h2>
         <small>(Click the Name Button for More Info)</small>

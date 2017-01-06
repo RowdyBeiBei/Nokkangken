@@ -55,8 +55,10 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
-              <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)}/>
-            <Link to='/locations'><button className='btn btn-primary mb3'>browse events</button></Link>
+                {console.log(this.props.timePreferance)}
+              <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)} isDisabled={this.props.userLocation.isFetching}/>
+              <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.timePreferance === null}>browse events</button></Link>
+              </div>
             </div>
           </div>
         </div>

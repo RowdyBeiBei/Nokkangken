@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Nokkangken</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-   <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Fredoka+One|Kavoon|Oleo+Script|Pattaya|Righteous|Rock+Salt" rel="stylesheet">
-	 <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Fredoka+One|Kavoon|Oleo+Script|Pattaya|Righteous|Rock+Salt" rel="stylesheet">
+	  <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/margin.css">
     <link rel="stylesheet" href="./style/padding.css">
     <link rel="stylesheet" href="./style/profileCard.css">
@@ -13,32 +13,32 @@
   </head>
   <body>
     <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '166781447136758',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '166781447136758',
+          xfbml      : true,
+          version    : 'v2.8'
+        });
 
 
-      FB.getLoginStatus(function(response){
-        if (response.status === 'connected') {
-          console.log('Logged in.');
-        }
-        else {
-          FB.login();
-        }
-      });
-    };
+        FB.getLoginStatus(function(response){
+          if (response.status === 'connected') {
+            console.log('Logged in.');
+          }
+          else {
+            FB.login();
+          }
+        });
+      };
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-</script>
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 
     <div id='app'>
