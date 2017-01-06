@@ -4,7 +4,8 @@ import * as Actions from './homeActions.js';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
 import axios from 'axios';
-import TimeSelector from '../timeSelector/TimeSelector.jsx'
+import TimeSelector from '../timeSelector/TimeSelector.jsx';
+import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
 
 
 class Home extends React.Component {
@@ -55,9 +56,9 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
-                {console.log(this.props.timePreferance)}
-              <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)} isDisabled={this.props.userLocation.isFetching}/>
-              <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.timePreferance === null}>browse events</button></Link>
+                <CalendarSelector/>
+                <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)} isDisabled={this.props.userLocation.isFetching}/>
+                <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.timePreferance === null}>browse events</button></Link>
               </div>
             </div>
           </div>

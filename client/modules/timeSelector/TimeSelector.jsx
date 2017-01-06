@@ -19,7 +19,7 @@ class TimeSelector extends React.Component {
 
   render() {
     return (
-      <select onChange={(event) => {this.props.setTimePreferance(event.target.value);}} disabled={this.props.disabled}>
+      <select onChange={(event) => {this.props.setTimePreferance(event.target.value);}} disabled={this.props.isDisabled}>
         {this.renderOptionsElements()}
       </select>
     );
