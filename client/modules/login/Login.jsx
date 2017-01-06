@@ -51,9 +51,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Login via facebook" onClick={(event) => { this.handleFblogin(event); this.onSubmit(event);}}/>
-    );
-  }
+        <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Login via facebook" onClick={(event) => { this.handleFblogin(event); this.onSubmit(event);}}/>
+
+    )
+  };
+
 }
 
 const mapStateToProps = (state) => {
