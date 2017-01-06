@@ -10,8 +10,6 @@ import ProspectiveMatchEntry from '../prospectiveMatchEntry/ProspectiveMatchEntr
 class ProspectiveMatches extends React.Component {
 
   componentWillMount() {
-    console.log(this.props.actions.setActiveProspectiveMatch);
-    console.log(this.props.prospectiveMatches.prospectiveMatches[0]);
     this.setActiveProspect();
   }
 
@@ -20,6 +18,8 @@ class ProspectiveMatches extends React.Component {
   }
 
   triggerMatching(event) {
+    // trigger matching function. add possible match & check if this makes a match &
+    // if it does add match to both users matches
     console.log(event.target);
     this.setActiveProspect();
   }

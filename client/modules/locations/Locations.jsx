@@ -71,7 +71,6 @@ class Locations extends React.Component {
         <Link to='/home'><button className="btn btn-primary mb3 mx1">Go Home</button></Link>
         <button onClick={() => {this.findMatches();}}>Find Matches</button>
 
-
         <h2>Check Out the Places Near You</h2>
         <small>(Click the Name Button for More Info)</small>
 
