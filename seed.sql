@@ -22,7 +22,7 @@ RETURNING id;
 INSERT INTO Possibles(possibleTime, id_user) VALUES
 (10, (SELECT id FROM users WHERE facebook_id = 1)),
 (20, (SELECT id FROM users WHERE facebook_id = 2)),
-(20, (SELECT id FROM users WHERE facebook_id = 3)),
+(10, (SELECT id FROM users WHERE facebook_id = 3)),
 (10, (SELECT id FROM users WHERE facebook_id = 4)),
 (10, (SELECT id FROM users WHERE facebook_id = 5))
 RETURNING id;
@@ -37,6 +37,7 @@ INSERT INTO possiblelocations(businessId, id_possibles) VALUES
 ('c', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 3)),
 ('b', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 3)),
 ('a', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 4)),
+('b', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 4)),
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 4)),
 ('e', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5)),
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5))
