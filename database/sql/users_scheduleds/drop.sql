@@ -1,2 +1,2 @@
 
-DROP TABLE IF EXISTS ${schema~}.Users_Scheduleds CASCADE;
+DROP TABLE IF EXISTS Users_Scheduleds CASCADE;

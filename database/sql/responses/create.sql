@@ -3,7 +3,7 @@
     schema left in here in case we want to change pre-formatting
 */
 
-CREATE TABLE IF NOT EXISTS  ${schema~}.Responses
+CREATE TABLE IF NOT EXISTS  Responses
 (
     id serial PRIMARY KEY,
     wouldJoin boolean,

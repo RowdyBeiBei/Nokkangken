@@ -1,2 +1,2 @@
 
-DROP TABLE IF EXISTS ${schema~}.Responses CASCADE;
+DROP TABLE IF EXISTS Responses CASCADE;

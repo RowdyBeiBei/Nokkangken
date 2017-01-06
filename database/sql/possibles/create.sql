@@ -3,7 +3,7 @@
     schema left in here in case we want to change pre-formatting
 */
 
-CREATE TABLE IF NOT EXISTS  ${schema~}.Possibles
+CREATE TABLE IF NOT EXISTS  Possibles
 (
     id serial PRIMARY KEY,
     possibleTime bigint NOT NULL,

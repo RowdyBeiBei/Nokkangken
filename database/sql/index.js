@@ -10,12 +10,8 @@ function sql(file) {
 
   var options = {
         
-    minify: true,
+    minify: true
 
-        // could explicitly define static fomatting here. public is the same as default schema name;
-    params: {
-      schema: 'public' 
-    }
   };
 
   return new QueryFile(fullPath, options);
@@ -46,7 +42,8 @@ module.exports = {
   users: {
     create: sql('users/create.sql'),
     empty: sql('users/empty.sql'),
-    drop: sql('users/drop.sql')
+    drop: sql('users/drop.sql'),
+    matches: sql('users/matches.sql')
   },
   users_scheduleds: {
     create: sql('users_scheduleds/create.sql'),
