@@ -1,12 +1,14 @@
-const yelpKeys = require('../config.js').yelpKeys;
+// const yelpKeys = require('../config.js').yelpKeys;
 const request = require('request-promise');
+const token = process.env['access_token'] || require('../config.js').yelpKeys;
+
 
 module.exports = {
   getNearbyLocations: (req, res) => {
     const optionsSearch = {
       url: 'https://api.yelp.com/v3/businesses/search?',
       headers: {
-        'Authorization': `Bearer ${yelpKeys.access_token}`
+        'Authorization':  `Bearer ${token}`
       },
       qs: {
         latitude: req.query.latitude,
@@ -43,7 +45,7 @@ module.exports = {
     const options = {
       url: `https://api.yelp.com/v3/businesses/${req.query.businessId}`,
       headers: {
-        'Authorization': `Bearer ${yelpKeys.access_token}`
+        'Authorization': `Bearer ${token}`
       }
     };
     request(options, (err, response, body) => {
