@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
-    "start": "node server/server.js"
+    "start": " set FACEBOOK_APP_ID= '166781447136758' && node server/server.js"
   },
   "author": "",
   "license": "ISC",
