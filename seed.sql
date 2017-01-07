@@ -41,4 +41,13 @@ INSERT INTO possiblelocations(businessId, id_possibles) VALUES
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 4)),
 ('e', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5)),
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5))
-RETURNING *;
+RETURNING id;
+
+INSERT INTO Responses(wouldJoin, id_possibles, id_user, id_prospectpossible, id_prospect) VALUES
+(FALSE, 
+  (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 1),
+  (SELECT users.id FROM users WHERE users.facebook_id = 1),
+  (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 3),
+  (SELECT users.id FROM users WHERE users.facebook_id = 3)
+)
+RETURNING id;
