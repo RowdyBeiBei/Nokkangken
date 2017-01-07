@@ -1,6 +1,7 @@
 import React from 'react';
-import {Modal} from 'elemental';
+import {Modal, ModalHeader, ModalBody} from 'elemental';
 import TimeSelector from '../timeSelector/TimeSelector.jsx';
+import '../../../node_modules/elemental/less/elemental.less';
 
 
 class OptionsModal extends React.Component {
@@ -8,11 +9,16 @@ class OptionsModal extends React.Component {
 
   render() {
     return (
-      <Modal>
-        <h2>Modal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <TimeSelector/>
-      </Modal>
+      <div>
+        <Modal isOpen={this.props.showModal} width='small' backdropClosesModal onCancel={() => {console.log(5);}}>
+          <ModalHeader text='This will be the selected date' showCloseButton onClose={() => {this.props.toggleModal();}}/>
+          <ModalBody>
+            <button className='btn btn-primary mb3 modalButton'>Scheduled Events</button>
+            <button className='btn btn-primary mb3 modalButton'>Browse Matches</button>
+            <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
+          </ModalBody>
+        </Modal>
+      </div>
     );
   }
 }
