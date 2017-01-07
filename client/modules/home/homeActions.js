@@ -1,10 +1,10 @@
-export const SET_TIME_PREFERANCE = 'SET_TIME_PREFERANCE';
+export const SET_DATE_TIME_PREFERANCE = 'SET_DATE_TIME_PREFERANCE';
 export const REQUEST_NEARBY_LOCATIONS_SENT = 'REQUEST_NEARBY_LOCATIONS_SENT';
 export const REQUEST_NEARBY_LOCATIONS_RECIEVED = 'REQUEST_NEARBY_LOCATIONS_RECIEVED';
 
-export const setTimePreferance = (time) => {
+export const setDateTimePreferance = (time) => {
   return {
-    type: SET_TIME_PREFERANCE,
+    type: SET_DATE_TIME_PREFERANCE,
     payload: time
   };
 };
