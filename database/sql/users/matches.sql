@@ -19,4 +19,4 @@ AND pl.businessid =
     ON p.id = pl.id_possibles
   WHERE p.possibletime = ${eventTime}
   AND u.facebook_id = ${facebookId})
-  AND r.wouldJoin IS null;
+AND r.wouldJoin IS null;
