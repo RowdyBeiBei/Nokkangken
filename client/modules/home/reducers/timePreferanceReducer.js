@@ -1,11 +1,11 @@
-import {SET_TIME_PREFERANCE} from '../homeActions.js';
+import {SET_DATE_TIME_PREFERANCE} from '../homeActions.js';
 
-const setTimePreferance = (state = null, action) => {
+const setDateTimePreferance = (state = null, action) => {
   switch (action.type) {
-    case SET_TIME_PREFERANCE:
+    case SET_DATE_TIME_PREFERANCE:
       return action.payload;
     default: return state;
   }
 };
 
-export default setTimePreferance;
+export default setDateTimePreferance;

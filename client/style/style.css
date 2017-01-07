@@ -116,3 +116,21 @@ body {
 .btn-facebook.active {
   background-color: #0d2456 \9 !important;
 }
+
+.timeSelector {
+  width: 100%;
+  border: medium solid black;
+  border-radius: 5px;
+  height:40px;
+  overflow: scroll;
+}
+
+.timeOption {
+  text-align: center;
+  font-size: large;
+  margin: 3px;
+}
+
+.modalButton {
+  width: 100%;
+}

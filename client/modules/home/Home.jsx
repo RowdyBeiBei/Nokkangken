@@ -4,35 +4,53 @@ import * as Actions from './homeActions.js';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
 import axios from 'axios';
-import TimeSelector from '../timeSelector/TimeSelector.jsx'
+import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
+import OptionsModal from '../optionsModal/OptionsModal.jsx';
+import moment from 'moment';
 
 
 class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      timePreferance: null,
+      showModal: false
+    };
+  }
 
-  onChange(time) {
-   this.setTimePreferance(time);
+  toggleModal() {
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  }
+
+  setDatePreferance(date) {
+    console.log(date);
+    this.setState({timePreferance: date});
+    this.setState({showModal: true});
   }
 
   setTimePreferance(time) {
-    const timePromise = Promise.resolve(time);
-    return this.props.actions.setTimePreferance(timePromise);
+    this.setState({
+     timePreferance: this.state.date.hour(time)
+    });
   }
 
-  getNearbyLocations({longitude, latitude}, open_at) {
+  getNearbyLocations({longitude, latitude}) {
     return axios.get('/yelp/locations', {
       params: {
         latitude: latitude,
-        longitude: longitude,
-        open_at: open_at.slice(0, -3)
+        longitude: longitude
       }
     });
   }
 
-  componentDidUpdate(prevProps) {
-    if(this.props.timePreferance && this.props.timePreferance !== prevProps.timePreferance) {
+  componentDidUpdate(prevProps, prevState) {
+    if(!this.props.userLocation.isFetching) {
       this.props.actions.requestNearbyLocationsSent();
-      this.getNearbyLocations(this.props.userLocation.geolocation, this.props.timePreferance)
+      this.getNearbyLocations(this.props.userLocation.geolocation)
       .then((locations) => {
+        console.log(locations);
         this.props.actions.requestNearbyLocationsRecieved(locations);
       });
     }
@@ -55,9 +73,13 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
-                {console.log(this.props.timePreferance)}
-              <TimeSelector setTimePreferance={this.setTimePreferance.bind(this)} isDisabled={this.props.userLocation.isFetching}/>
-              <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.timePreferance === null}>browse events</button></Link>
+                <CalendarSelector setDateTimePreferance={this.setDatePreferance.bind(this)}/>
+                <OptionsModal
+                  showModal={this.state.showModal}
+                  setTimePreferance={this.setTimePreferance.bind(this)}
+                  toggleModal={this.toggleModal.bind(this)}
+                />
+                <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.userLocation.isFetching}>browse events</button></Link>
               </div>
             </div>
           </div>

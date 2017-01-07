@@ -10,8 +10,7 @@ module.exports = {
       },
       qs: {
         latitude: req.query.latitude,
-        longitude: req.query.longitude,
-        open_at: req.query.open_at
+        longitude: req.query.longitude
       }
     };
     request(options, (err, response, body) => {
