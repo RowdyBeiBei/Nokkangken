@@ -72,10 +72,10 @@ body {
   height: 10%;
 }
 
-/*.locationImg {
+.locationImg {
   height: 20%;
   width: 20%;
-}*/
+}
 .selectedLocation {
   border: medium solid black;
 }
