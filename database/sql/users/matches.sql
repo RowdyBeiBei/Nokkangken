@@ -1,6 +1,6 @@
 --inputs are (facebook_id, eventTime) ${eventTime} ${facebookId}
 
-SELECT DISTINCT ON (u.facebook_id) u.facebook_id, u.name, u.bio, u.picture, r.wouldJoin
+SELECT DISTINCT ON (u.facebook_id) u.facebook_id, u.name, u.bio, u.picture
 FROM users AS u
 INNER JOIN possibles AS p 
   ON u.id = p.id_user
