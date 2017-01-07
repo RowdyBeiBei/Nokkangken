@@ -1,6 +1,8 @@
 // const yelpKeys = require('../config.js').yelpKeys;
 const request = require('request-promise');
-const token = process.env['access_token'] || require('../config.js').yelpKeys;
+const token = process.env['access_token'] || require('../config.js').yelpKeys.access_token;
+
+
 
 module.exports = {
   getNearbyLocations: (req, res) => {
