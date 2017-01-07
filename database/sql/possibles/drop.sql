@@ -1,2 +1,2 @@
 
-DROP TABLE IF EXISTS ${schema~}.Possibles CASCADE;
+DROP TABLE IF EXISTS Possibles CASCADE;

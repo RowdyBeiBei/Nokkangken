@@ -1,2 +1,2 @@
 
-DROP TABLE IF EXISTS ${schema~}.PossibleLocations CASCADE;
+DROP TABLE IF EXISTS PossibleLocations CASCADE;

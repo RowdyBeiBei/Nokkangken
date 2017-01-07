@@ -4,7 +4,7 @@ var yelpRouter = require('./routes/yelpRouter.js');
 var router = require('express').Router();
 
 //uncomment once files to connect exist
-// router.use('/api', apiRouter);
+router.use('/api', apiRouter);
 router.use('/auth', authRouter);
 router.use('/yelp', yelpRouter);
 router.use('/error', function(req, res) {

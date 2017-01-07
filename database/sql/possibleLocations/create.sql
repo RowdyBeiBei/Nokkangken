@@ -2,7 +2,7 @@
     schema left in here in case we want to change pre-formatting
 */
 
-CREATE TABLE IF NOT EXISTS ${schema~}.PossibleLocations
+CREATE TABLE IF NOT EXISTS PossibleLocations
 (
     id serial PRIMARY KEY,
     businessId text NOT NULL,
