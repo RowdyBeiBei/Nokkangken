@@ -21,6 +21,6 @@ export const requestNearbyLocationsRecieved = (nearbyLocations) => {
   return {
     type: REQUEST_NEARBY_LOCATIONS_RECIEVED,
     isFetching: false,
-    nearbyLocations: nearbyLocations.data.businesses
+    nearbyLocations: nearbyLocations.data
   };
 };
