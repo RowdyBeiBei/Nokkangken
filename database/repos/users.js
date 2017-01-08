@@ -22,6 +22,10 @@ module.exports = (rep, pgp) => {
     empty: () =>
             rep.none(sql.empty),
 
+        //add dummy data
+    init: () => 
+        rep.manyOrNone(sql.init),
+
     matches: values => 
       rep.manyOrNone(sql.matches, values)
     

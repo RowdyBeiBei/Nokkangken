@@ -20,6 +20,9 @@ module.exports = (rep, pgp) => {
 
         // Removes all records from the table;
     empty: () =>
-            rep.none(sql.empty)
+            rep.none(sql.empty),
+        //add dummy data
+    init: () => 
+        rep.manyOrNone(sql.init)
   };
 };
