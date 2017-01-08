@@ -3,7 +3,7 @@
     schema left in here in case we want to change pre-formatting
 */
 
-CREATE TABLE IF NOT EXISTS  Users
+CREATE TABLE IF NOT EXISTS Users
 (
     id serial PRIMARY KEY,
     facebook_id bigint UNIQUE NOT NULL, 

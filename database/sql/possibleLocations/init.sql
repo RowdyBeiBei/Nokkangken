@@ -1,31 +1,4 @@
-/*
-   Clears out db and inserts dummy data
-*/
-
---Empty tables
-TRUNCATE users CASCADE;
-TRUNCATE possibles CASCADE;
-TRUNCATE scheduleds CASCADE;
-TRUNCATE possiblelocations CASCADE;
-TRUNCATE users_scheduleds CASCADE;
-TRUNCATE responses CASCADE;
-
---Create tables
-INSERT INTO Users(facebook_id, name) VALUES
-(1, 'Demo User 1'), -- user 1;
-(2, 'Demo User 2'), -- user 2;
-(3, 'Demo User 3'), -- user 3;
-(4, 'Demo User 4'), -- user 4;
-(5, 'Demo User 5') -- user 5;
-RETURNING id;
-
-INSERT INTO Possibles(possibleTime, id_user) VALUES
-(10, (SELECT id FROM users WHERE facebook_id = 1)),
-(20, (SELECT id FROM users WHERE facebook_id = 2)),
-(10, (SELECT id FROM users WHERE facebook_id = 3)),
-(10, (SELECT id FROM users WHERE facebook_id = 4)),
-(10, (SELECT id FROM users WHERE facebook_id = 5))
-RETURNING id;
+--dummy data for possibleLocations
 
 INSERT INTO possiblelocations(businessId, id_possibles) VALUES
 ('a', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 1)),
@@ -41,13 +14,4 @@ INSERT INTO possiblelocations(businessId, id_possibles) VALUES
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 4)),
 ('e', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5)),
 ('f', (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 5))
-RETURNING id;
-
-INSERT INTO Responses(wouldJoin, id_possibles, id_user, id_prospectpossible, id_prospect) VALUES
-(FALSE, 
-  (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 1),
-  (SELECT users.id FROM users WHERE users.facebook_id = 1),
-  (SELECT possibles.id FROM possibles, users WHERE users.id = possibles.id_user AND users.facebook_id = 3),
-  (SELECT users.id FROM users WHERE users.facebook_id = 3)
-)
 RETURNING id;

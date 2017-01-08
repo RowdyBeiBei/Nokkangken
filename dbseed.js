@@ -1,5 +1,24 @@
 var db = require('./database').db;
-var QueryFile = require('pg-promise').QueryFile;
 
-var seedDb = new QueryFile('./seed.sql');
-db.any(seedDb);
+db.tx(function (t) {
+  return t.batch([
+    t.users.empty(),
+    t.scheduleds.empty(),
+    t.possibles.empty(),
+    t.possibleLocations.empty(),
+    t.responses.empty(),
+    t.users_scheduleds.empty(),
+    t.users.init(),
+    t.possibles.init(),
+    t.possibleLocations.init(),
+    t.responses.init()
+  ]);
+})
+  .then(function (data) {
+        // SUCCESS, transaction committed
+    console.log('success');
+  })
+  .catch(function (error) {
+        // ERROR, transaction rolled back
+    console.log('I HATE YOU', error);
+  });  

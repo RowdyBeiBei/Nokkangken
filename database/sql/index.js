@@ -22,17 +22,20 @@ module.exports = {
   possibleLocations: {
     create: sql('possibleLocations/create.sql'),
     empty: sql('possibleLocations/empty.sql'),
-    drop: sql('possibleLocations/drop.sql')
+    drop: sql('possibleLocations/drop.sql'),
+    init: sql('possibleLocations/init.sql')
   },
   possibles: {
     create: sql('possibles/create.sql'),
     empty: sql('possibles/empty.sql'),
-    drop: sql('possibles/drop.sql')
+    drop: sql('possibles/drop.sql'),
+    init: sql('possibles/init.sql')
   },
   responses: {
     create: sql('responses/create.sql'),
     empty: sql('responses/empty.sql'),
-    drop: sql('responses/drop.sql')
+    drop: sql('responses/drop.sql'),
+    init: sql('responses/init.sql')
   },
   scheduleds: {
     create: sql('scheduleds/create.sql'),
@@ -43,6 +46,7 @@ module.exports = {
     create: sql('users/create.sql'),
     empty: sql('users/empty.sql'),
     drop: sql('users/drop.sql'),
+    init: sql('users/init.sql'),
     matches: sql('users/matches.sql')
   },
   users_scheduleds: {
