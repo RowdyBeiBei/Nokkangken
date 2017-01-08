@@ -26,6 +26,7 @@
     "pg-promise": "^5.5.0",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
     "react-calendar-component": "^1.1.0",
     "react-dom": "^15.4.1",
     "react-loading": "0.0.9",
