@@ -18,15 +18,10 @@ class TimeSelector extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
+
       <div className='timeSelector' disabled={this.props.isDisabled}>
-=======
-
-      <select onChange={(event) => {this.props.setTimePreferance(event.target.value);}} disabled={this.props.disabled}>
-
->>>>>>> fixed the bug timeselator
         {this.renderOptionsElements()}
-      </div>
+     </div>
     );
   }
 }
