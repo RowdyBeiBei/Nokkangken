@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import * as Actions from './appActions.js';
 import {bindActionCreators} from 'redux';
 import axios from 'axios';
+import Navigation from '../navigation/Navigation.jsx';
+import {hashHistory} from 'react-router';
 
 
 
@@ -35,12 +37,18 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Navigation userLocation={this.props.userLocation}/>
         {this.props.children}
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    userLocation: state.userLocation
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -48,4 +56,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

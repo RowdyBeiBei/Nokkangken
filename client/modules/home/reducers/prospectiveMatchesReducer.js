@@ -1,5 +1,5 @@
-import {REQUEST_PROSPECTIVE_MATCHES_SENT} from '../locationsActions.js';
-import {REQUEST_PROSPECTIVE_MATCHES_RECIEVED} from '../locationsActions.js';
+import {REQUEST_PROSPECTIVE_MATCHES_SENT} from '../homeActions.js';
+import {REQUEST_PROSPECTIVE_MATCHES_RECIEVED} from '../homeActions.js';
 
 const getProspectiveMatches = (state = null, action) => {
   switch (action.type) {

@@ -5,23 +5,11 @@ import {bindActionCreators} from 'redux';
 import {Link, hashHistory} from 'react-router';
 import Loading from 'react-loading';
 import axios from 'axios';
+import {Grid, Row, Col, Thumbnail, Checkbox} from 'react-bootstrap';
 
 
 
 class Locations extends React.Component {
-
-  findMatches() {
-    this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches()
-    .then((matches) => {
-      this.props.actions.requestProspectiveMatchesRecieved(matches);
-      hashHistory.push('/prospectiveMatches');
-    });
-  }
-
-  getProspectiveMatches() {
-    return axios.get('/prospectiveMatches')
-  }
 
   getBusinessInfo(businessId) {
     return axios.get('/yelp/selectedLocation', {
@@ -41,20 +29,45 @@ class Locations extends React.Component {
   }
 
   renderNearbyLocations() {
-    return this.props.nearbyLocations.nearbyLocations.map((location) => {
+    return (
+      <Grid bsClass='locationsDiv container'>
+        {this.renderNearbyLocationRows()}
+      </Grid>
+    );
+  }
+
+  renderNearbyLocationRows() {
+    return this.renderNearbyLocationEntries().map((rowEntries, index) => {
       return (
-        <div  className="col-md-4 locationDiv"  key={location.id}>
-          <hr/>
-          <div>
-            <button className="alert alert-danger truncate" onClick={() => {this.onClick(location.id)}}>{location.name}</button>
-            <div>
-              <input className="checkBox pull-right" type="checkbox"  />
-              <img className="img-responsive" src={location.image_url}/>
-            </div>
-          </div>
-        </div>
+        <Row key={index}>
+          {rowEntries[0]}
+          {rowEntries[1]}
+          {rowEntries[2]}
+          {rowEntries[3]}
+        </Row>
       );
     });
+  }
+
+  renderNearbyLocationEntries() {
+    return this.props.nearbyLocations.nearbyLocations.map((location) => {
+      return(
+        <Col md={3} sm={6}>
+          <Thumbnail src={location.image_url}>
+            <h2>{location.name}</h2>
+            <h3>{location.categories[0].title}</h3>
+            <Checkbox/>
+          </Thumbnail>
+        </Col>
+      );
+    }).reduce((init, curr, index) => {
+      if(init[init.length - 1].length !== 4) {
+        init[init.length - 1].push(curr);
+      }else {
+        init.push([curr]);
+      }
+      return init;
+    }, [[]]);
   }
 
   renderLoading() {
@@ -68,17 +81,7 @@ class Locations extends React.Component {
   render() {
     return (
       <div>
-        <Link to='/home'><button className="btn btn-primary mb3 mx1">Go Home</button></Link>
-        <button className='btn btn-primary mb3 mx1' onClick={() => {this.findMatches();}}>Find Matches</button>
-
-        <h2>Check Out the Places Near You</h2>
-        <small>(Click the Name Button for More Info)</small>
-
-        <div className="container text-center">
-          <div className="row">
-            {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-          </div>
-        </div>
+        {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
       </div>
     );
   }
@@ -89,6 +92,7 @@ const mapStateToProps = (state) => {
     nearbyLocations: state.nearbyLocations
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
