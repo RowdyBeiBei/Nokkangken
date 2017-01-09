@@ -123,6 +123,7 @@ body {
   border-radius: 5px;
   height:40px;
   overflow: scroll;
+  margin-top: 1%;
 }
 
 .timeOption {
@@ -134,3 +135,15 @@ body {
 .modalButton {
   width: 100%;
 }
+
+.locationsDiv {
+  margin-top: 10vh;
+}
+
+ .modal-container {
+   position: relative;
+ }
+
+ .modal-container .modal, .modal-container .modal-backdrop {
+   position: absolute;
+ }

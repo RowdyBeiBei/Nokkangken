@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from './homeActions.js';
 import {bindActionCreators} from 'redux';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import axios from 'axios';
 import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
 import OptionsModal from '../optionsModal/OptionsModal.jsx';
@@ -14,8 +14,22 @@ class Home extends React.Component {
     super();
     this.state = {
       timePreferance: null,
-      showModal: false
+      showModal: false,
+      disableAddMeeting: true
     };
+  }
+
+  findMatches() {
+    this.props.actions.requestProspectiveMatchesSent();
+    this.getProspectiveMatches()
+    .then((matches) => {
+      this.props.actions.requestProspectiveMatchesRecieved(matches);
+      hashHistory.push('/prospectiveMatches');
+    });
+  }
+
+  getProspectiveMatches() {
+    return axios.get('/prospectiveMatches');
   }
 
   toggleModal() {
@@ -25,14 +39,17 @@ class Home extends React.Component {
   }
 
   setDatePreferance(date) {
-    console.log(date);
     this.setState({timePreferance: date});
     this.setState({showModal: true});
   }
 
   setTimePreferance(time) {
     this.setState({
-     timePreferance: this.state.date.hour(time)
+     timePreferance: this.state.timePreferance.hour(time)
+    });
+    console.log(this.state.timePreferance);
+    this.setState({
+      disableAddMeeting: false
     });
   }
 
@@ -50,7 +67,6 @@ class Home extends React.Component {
       this.props.actions.requestNearbyLocationsSent();
       this.getNearbyLocations(this.props.userLocation.geolocation)
       .then((locations) => {
-        console.log(locations);
         this.props.actions.requestNearbyLocationsRecieved(locations);
       });
     }
@@ -73,13 +89,14 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
-                <CalendarSelector setDateTimePreferance={this.setDatePreferance.bind(this)}/>
-                <OptionsModal
-                  showModal={this.state.showModal}
-                  setTimePreferance={this.setTimePreferance.bind(this)}
-                  toggleModal={this.toggleModal.bind(this)}
-                />
-                <Link to='/locations'><button className='btn btn-primary mb3' disabled={this.props.userLocation.isFetching}>browse events</button></Link>
+                <CalendarSelector
+                   toggleModal={this.toggleModal.bind(this)}
+                   setTimePreferance={this.setTimePreferance.bind(this)}
+                   showModal={this.state.showModal}
+                   setDatePreferance={this.setDatePreferance.bind(this)}
+                   disableAddMeeting={this.state.disableAddMeeting}
+                   findMatches={this.findMatches.bind(this)}
+                 />
               </div>
             </div>
           </div>

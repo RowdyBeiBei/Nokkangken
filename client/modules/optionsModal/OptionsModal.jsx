@@ -1,22 +1,30 @@
 import React from 'react';
-import {Modal, ModalHeader, ModalBody} from 'elemental';
 import TimeSelector from '../timeSelector/TimeSelector.jsx';
-import '../../../node_modules/elemental/less/elemental.less';
+import {Modal, Button} from 'react-bootstrap';
 
 
 class OptionsModal extends React.Component {
 
+  findMatches() {
+    this.props.findMatches();
+  }
 
   render() {
     return (
-      <div>
-        <Modal isOpen={this.props.showModal} width='small' backdropClosesModal onCancel={() => {console.log(5);}}>
-          <ModalHeader text='This will be the selected date' showCloseButton onClose={() => {this.props.toggleModal();}}/>
-          <ModalBody>
-            <button className='btn btn-primary mb3 modalButton'>Scheduled Events</button>
-            <button className='btn btn-primary mb3 modalButton'>Browse Matches</button>
+      <div className='modal-container'>
+        <Modal show={this.props.showModal} onHide={() => {this.props.toggleModal();}}>
+          <Modal.Header>
+            <Modal.Title>This is the modal</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Button block bsStyle='primary' >Scheduled</Button>
+            <Button block bsStyle='primary' onClick={() => {this.findMatches()}}>Find Matches</Button>
+            <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
             <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
-          </ModalBody>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={() => {this.props.toggleModal();}}>Close</Button>
+          </Modal.Footer>
         </Modal>
       </div>
     );
