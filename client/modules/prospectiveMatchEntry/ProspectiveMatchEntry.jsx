@@ -5,9 +5,9 @@ class ProspectiveMatchEntry extends React.Component {
   render() {
     return (
       <div>
-        <h3>{this.props.entry.username}</h3>
-        <img className='profilePic' src={this.props.entry.imgUrl}/>
-        <h2>ljsdbfljabdsjlfsdvbvjhavsdjh</h2>
+        <h3>{this.props.entry.name}</h3>
+        <img className='profilePic' src={this.props.entry.picture}/>
+        <h2>{this.props.entry.bio}</h2>
       </div>
     );
   }

@@ -16,11 +16,11 @@ class CalendarSelector extends React.Component {
     return (
       <div>
         <OptionsModal
+          getProspectiveMatches={this.props.getProspectiveMatches}
           showModal={this.props.showModal}
           setTimePreferance={this.props.setTimePreferance}
           toggleModal={this.props.toggleModal}
           disableAddMeeting={this.props.disableAddMeeting}
-          findMatches={this.props.findMatches}
         />
         <Calendar
           onNextMonth={() => this.setState({ date: this.state.date.clone().add(1, 'months')})}

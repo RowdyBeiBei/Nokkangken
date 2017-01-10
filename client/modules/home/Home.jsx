@@ -21,15 +21,15 @@ class Home extends React.Component {
 
   findMatches() {
     this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches()
+    this.getProspectiveMatches(this.props.user.facebook_id, this.state.timePreferance.unix())
     .then((matches) => {
       this.props.actions.requestProspectiveMatchesRecieved(matches);
       hashHistory.push('/prospectiveMatches');
     });
   }
 
-  getProspectiveMatches() {
-    return axios.get('/prospectiveMatches');
+  getProspectiveMatches(facebookId, time) {
+    return axios.get(`/api/user/matches/${facebookId}/10`);
   }
 
   toggleModal() {
@@ -47,7 +47,6 @@ class Home extends React.Component {
     this.setState({
      timePreferance: this.state.timePreferance.hour(time)
     });
-    console.log(this.state.timePreferance);
     this.setState({
       disableAddMeeting: false
     });
@@ -95,7 +94,7 @@ class Home extends React.Component {
                    showModal={this.state.showModal}
                    setDatePreferance={this.setDatePreferance.bind(this)}
                    disableAddMeeting={this.state.disableAddMeeting}
-                   findMatches={this.findMatches.bind(this)}
+                   getProspectiveMatches={this.findMatches.bind(this)}
                  />
               </div>
             </div>

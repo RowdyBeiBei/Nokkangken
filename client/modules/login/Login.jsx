@@ -15,7 +15,6 @@ class Login extends React.Component {
     FB.getLoginStatus(function(response){
       if (response.status === 'connected') {
         FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-          // console.log(response);
           that.getUser(response).then((response) => {that.props.actions.login(response.data)}).then(() => {
              hashHistory.push('/home')});
           });

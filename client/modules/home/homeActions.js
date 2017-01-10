@@ -38,6 +38,6 @@ export const requestProspectiveMatchesRecieved = (prospectiveMatches) => {
   return {
     type: REQUEST_PROSPECTIVE_MATCHES_RECIEVED,
     isFetching: false,
-    prospectiveMatches: prospectiveMatches.data.prospectiveMatches
+    prospectiveMatches: prospectiveMatches.data
   };
 };
