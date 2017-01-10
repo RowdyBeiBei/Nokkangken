@@ -47,7 +47,9 @@ module.exports = {
     empty: sql('users/empty.sql'),
     drop: sql('users/drop.sql'),
     init: sql('users/init.sql'),
-    matches: sql('users/matches.sql')
+    matches: sql('users/matches.sql'),
+    checkMatch: sql('users/checkMatch.sql'),
+    getUser: sql('users/getUser.sql')
   },
   users_scheduleds: {
     create: sql('users_scheduleds/create.sql'),

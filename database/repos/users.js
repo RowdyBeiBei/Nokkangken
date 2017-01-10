@@ -27,7 +27,13 @@ module.exports = (rep, pgp) => {
         rep.manyOrNone(sql.init),
 
     matches: values => 
-      rep.manyOrNone(sql.matches, values)
+      rep.manyOrNone(sql.matches, values),
+
+    checkMatch: values =>
+        rep.oneOrNone(sql.checkMatch, values),
+
+    getUser: values =>
+        rep.oneOrNone(sql.getUser, values)
     
             
   };
