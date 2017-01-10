@@ -4,10 +4,10 @@ class ProspectiveMatchEntry extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>{this.props.entry.name}</h3>
+      <div className='prospectiveMatchDiv'>
+        <h2>{this.props.entry.name}</h2>
         <img className='profilePic' src={this.props.entry.picture}/>
-        <h2>{this.props.entry.bio}</h2>
+        <p>{this.props.entry.bio}</p>
       </div>
     );
   }
