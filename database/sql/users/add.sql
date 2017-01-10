@@ -1,9 +1,6 @@
 /*
-    Inserts a new user record.
-
-    NOTE: We only add schema here to demonstrate the ability of class QueryFile
-    to pre-format SQL with static formatting parameters when needs to be.
+    Inserts a new user record. If user already exists, updates the user's record
 */
-INSERT INTO Users(name)
-VALUES($1)
+INSERT INTO Users AS u (u.facebook_id, u.name, u.email, u.bio, u.picture)
+VALUES(${facebookId}, ${name}, ${email}, ${bio}, ${picture})
 RETURNING id

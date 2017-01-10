@@ -1,4 +1,6 @@
 
+--checks to see if a user (${userid}) has a match at a certain time (${eventTime})
+
 
 SELECT u.name, u.id, r2.id_user, r2.wouldjoin, r1.id_user, r2.id_prospect, r1.wouldjoin
 FROM users as u
