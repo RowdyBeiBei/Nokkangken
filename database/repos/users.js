@@ -33,7 +33,10 @@ module.exports = (rep, pgp) => {
         rep.oneOrNone(sql.checkMatch, values),
 
     getUser: values =>
-        rep.oneOrNone(sql.getUser, values)
+        rep.oneOrNone(sql.getUser, values),
+
+    addUser: values =>
+        rep.one(sql.add, values)
     
             
   };
