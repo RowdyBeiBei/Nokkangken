@@ -2,8 +2,6 @@
 const request = require('request-promise');
 const token = process.env['access_token'] || require('../config.js').yelpKeys.access_token;
 
-
-
 module.exports = {
   getNearbyLocations: (req, res) => {
     const optionsSearch = {
@@ -26,7 +24,7 @@ module.exports = {
         const optionsId = {
           url: `https://api.yelp.com/v3/businesses/${id}`,
           headers: {
-            'Authorization': `Bearer ${yelpKeys.access_token}`
+            'Authorization': `Bearer ${token}`
           },
           json: true
         };
