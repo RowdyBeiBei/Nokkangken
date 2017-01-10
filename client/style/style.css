@@ -11,6 +11,7 @@ body {
 
 .header {
   font-family: 'Kavoon', cursive;
+  color: #fffff;
   /*font-family: 'Fredoka One', cursive;*/
 }
 .message {
@@ -71,10 +72,10 @@ body {
   height: 10%;
 }
 
-/*.locationImg {
+.locationImg {
   height: 20%;
   width: 20%;
-}*/
+}
 .selectedLocation {
   border: medium solid black;
 }

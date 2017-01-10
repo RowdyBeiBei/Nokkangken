@@ -18,9 +18,10 @@ class TimeSelector extends React.Component {
 
   render() {
     return (
+
       <div className='timeSelector' disabled={this.props.isDisabled}>
         {this.renderOptionsElements()}
-      </div>
+     </div>
     );
   }
 }
