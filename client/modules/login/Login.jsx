@@ -20,6 +20,7 @@ class Login extends React.Component {
              hashHistory.push('/home')});
           });
       } else {
+        console.log('not connected')
         FB.login(function(response) {
           FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
             that.getUser(response).then((response) => {that.props.actions.login(response.data)}).then(() => {
