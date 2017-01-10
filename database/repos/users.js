@@ -36,7 +36,10 @@ module.exports = (rep, pgp) => {
         rep.oneOrNone(sql.getUser, values),
 
     addUser: values =>
-        rep.one(sql.add, values)
+        rep.one(sql.add, values),
+    
+    update: values =>
+        rep.none(sql.update, values)
     
             
   };
