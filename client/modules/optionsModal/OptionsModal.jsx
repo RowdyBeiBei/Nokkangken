@@ -5,8 +5,8 @@ import {Modal, Button} from 'react-bootstrap';
 
 class OptionsModal extends React.Component {
 
-  findMatches() {
-    this.props.findMatches();
+  getProspectiveMatches() {
+    this.props.getProspectiveMatches();
   }
 
   render() {
@@ -18,9 +18,9 @@ class OptionsModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Button block bsStyle='primary' >Scheduled</Button>
-            <Button block bsStyle='primary' onClick={() => {this.findMatches()}}>Find Matches</Button>
+            <Button block bsStyle='primary' onClick={() => {this.getProspectiveMatches()}}>Find Matches</Button>
             <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
-            <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
+            <TimeSelector setTimePreferance={this.props.setTimePreferance}/> 
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={() => {this.props.toggleModal();}}>Close</Button>

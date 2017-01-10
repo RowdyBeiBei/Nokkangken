@@ -10,6 +10,12 @@ import {Grid, Row, Col, Thumbnail, Checkbox} from 'react-bootstrap';
 
 
 class Locations extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedLocations: []
+    };
+  }
 
   getBusinessInfo(businessId) {
     return axios.get('/yelp/selectedLocation', {
@@ -56,7 +62,7 @@ class Locations extends React.Component {
           <Thumbnail src={location.image_url}>
             <h2>{location.name}</h2>
             <h3>{location.categories[0].title}</h3>
-            <Checkbox/>
+            <Checkbox inPut/>
           </Thumbnail>
         </Col>
       );

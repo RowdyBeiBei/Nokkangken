@@ -12,7 +12,16 @@ exports.getUser = (req, res) => {
 };
 
 exports.addUser = (req, res) => {
-  db.users.addUser({facebookId: +req.body.facebookId, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
+  db.users.addUser({facebookId: +req.body.id, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
     .then(data=> res.status(201).send(data))
     .catch(error=> res.status(409).send(error));
 };
+
+// { name: 'Nick Fortner',
+//   id: '1319206294806849',
+//   picture:
+//    { data:
+//       { height: 160,
+//         is_silhouette: false,
+//         url: 'https://scontent.xx.fbcdn.net/v/t1.0-1/p160x160/14054241_1182904738437006_659567511774400480_n.jpg?oh=8861d893c3cfd535f072d217590c5b22&oe=5913BE3A',
+//         width: 160 } } }

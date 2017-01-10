@@ -10,8 +10,8 @@ db.tx(function (t) {
     t.users_scheduleds.empty(),
     t.users.init(),
     t.possibles.init(),
-    t.possibleLocations.init(),
-    t.responses.init()
+    t.possibleLocations.init()
+    // t.responses.init()
   ]);
 })
   .then(function (data) {
@@ -21,4 +21,4 @@ db.tx(function (t) {
   .catch(function (error) {
         // ERROR, transaction rolled back
     console.log('I HATE YOU', error);
-  });  
+  });

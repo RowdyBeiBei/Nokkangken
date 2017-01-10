@@ -1,9 +1,9 @@
 --some dummy data for users table
 
-INSERT INTO Users(facebook_id, name) VALUES
-(1, 'Demo User 1'), -- user 1;
-(2, 'Demo User 2'), -- user 2;
-(3, 'Demo User 3'), -- user 3;
-(4, 'Demo User 4'), -- user 4;
-(5, 'Demo User 5') -- user 5;
+INSERT INTO Users(facebook_id, name, picture, bio) VALUES
+(1, 'Nick', 'http://s.newsweek.com/sites/www.newsweek.com/files/2016/06/19/0620trumppolicies01.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'), -- user 1;
+(2, 'Dan', 'https://i.ytimg.com/vi/m_wmWMkjB3U/maxresdefault.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'), -- user 2;
+(3, 'Bei', 'http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/10/Pictures-of-people-4.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'), -- user 3;
+(4, 'Wasiff', 'http://cdn.pinknews.co.uk/images/2016/08/B5JeGbxIAAABkc1_640x345_acf_cropped-1.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'), -- user 4;
+(5, 'Niko', 'https://s-media-cache-ak0.pinimg.com/564x/9e/8d/af/9e8daf0ff00ee0f6483cee1c70cac85f.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.') -- user 5;
 RETURNING id;
