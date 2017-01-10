@@ -31,21 +31,14 @@ class Login extends React.Component {
    });
  }
 
-
-  getUser({name, id, picture}) {
-    return axios.get('/auth/login', {
-      params: {
-        name: name,
-        id: id,
-        picture: picture.data.url
-      }
-    });
+  getUser(facebookId) {
+    return axios.get(`/api/user/${1}`);
   }
 
   render() {
     return (
         <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Login via facebook" onClick={(event) => { this.handleFblogin(event);}}/>
-    )
+    );
   };
 }
 
