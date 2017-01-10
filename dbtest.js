@@ -3,10 +3,11 @@
 var db = require('./database').db;
 
 var obj = {
-  facebook_id: 1,
+  facebookId: 17,
   name: 'Jonny',
-  bio: 'I am a real cool guy'
+  email: null,
+  bio: 'I am a real cool MAN',
+  picture: null
 };
 
-db.query(db.format(UPDATE Users SET (${this~}) = (${name}, ${bio}, ${picture})
-WHERE facebook_id = ${facebook_id}), obj);
+db.query('UPDATE users SET name = COALESCE(${name}, name), email = COALESCE(${email}, email), bio = COALESCE(${bio}, bio), picture = COALESCE(${picture}, picture) WHERE facebook_id = ${facebookId} AND  (${name} IS DISTINCT FROM name OR ${email} IS DISTINCT FROM email OR ${bio} IS DISTINCT FROM bio OR ${picture} IS DISTINCT FROM picture)', obj);

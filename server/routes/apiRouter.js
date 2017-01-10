@@ -5,6 +5,7 @@ var userHandler = require('../handlers/apiHandlers/userHandler.js');
 router.get('/user/matches/:facebookId/:time', userHandler.getMatches);
 router.get('/user/:facebookId', userHandler.getUser);
 router.post('/user', userHandler.addUser);
+router.put('/user', userHandler.updateUser);
 
 
 module.exports = router; 

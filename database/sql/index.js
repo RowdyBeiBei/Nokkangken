@@ -50,7 +50,8 @@ module.exports = {
     matches: sql('users/matches.sql'),
     checkMatch: sql('users/checkMatch.sql'),
     getUser: sql('users/getUser.sql'),
-    add: sql('users/add.sql')
+    add: sql('users/add.sql'),
+    update: sql('users/update.sql')
   },
   users_scheduleds: {
     create: sql('users_scheduleds/create.sql'),
