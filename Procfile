@@ -1,3 +1,1 @@
-web: npm run start
-web: node dbinit.js
-web: node dbseed.js
+web: npm run start node dbinit.js node dbseed.js
