@@ -9,7 +9,7 @@
     "start": "node server/server.js",
     "dbinit": "node dbinit.js",
     "dbseed": "node dbseed.js",
-    "postinstall": "npm dbinit && npm dbseed"
+    "postinstall": "npm dbinit"
   },
   "author": "",
   "license": "ISC",
