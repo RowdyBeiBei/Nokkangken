@@ -31,7 +31,7 @@ exports.addPossibleEvent = (req, res) => {
     return t.possibles.add({eventTime: +req.body.time, facebookId: +req.body.facebookId})
       .then(p => {
         return req.body.locations.map(businessId => {
-          t.possibleLocations.add({businessId: businessId, possibleId: p.id});
+          return t.possibleLocations.add({businessId: businessId, possibleId: p.id});
         });
       });
   })
