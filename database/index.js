@@ -44,7 +44,7 @@ var config = {
   database: process.env.DB_DATABASE,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-
+  ssl:true
 };
 
 // Load and initialize pg-promise:
