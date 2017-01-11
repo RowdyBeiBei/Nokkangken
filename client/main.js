@@ -12,7 +12,7 @@ import Home from './modules/home/Home.jsx';
 import SelectedLocation from './modules/selectedLocation/SelectedLocation.jsx';
 import ProspectiveMatches from './modules/prospectiveMatches/ProspectiveMatches.jsx';
 
-// window.FACEBOOK_APPID = FACEBOOK_APPID;
+window.FACEBOOK_APPID = FACEBOOK_APPID;
 
 const store = configureStore();
 
