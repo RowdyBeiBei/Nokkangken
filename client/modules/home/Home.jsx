@@ -29,7 +29,7 @@ class Home extends React.Component {
   }
 
   getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/possibles/${1}/10`);
+    return axios.get(`/api/user/possibles/${facebookId}/${time}`);
   }
 
   toggleModal() {

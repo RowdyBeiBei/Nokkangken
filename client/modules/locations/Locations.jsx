@@ -17,20 +17,8 @@ class Locations extends React.Component {
     };
   }
 
-  getBusinessInfo(businessId) {
-    return axios.get('/yelp/selectedLocation', {
-      params: {
-        businessId: businessId
-      }
-    });
-  }
-
   onClick(businessId) {
-    this.props.actions.requestBusinessInfoSent();
-    this.getBusinessInfo(businessId)
-    .then((businessInfo) => {
-      return this.props.actions.requestBusinessInfoRecieved(businessInfo);
-    });
+    this.props.actions.requestBusinessInfoRecieved(businessInfo);
     hashHistory.push('/selectedLocation');
   }
 
@@ -55,6 +43,11 @@ class Locations extends React.Component {
     });
   }
 
+  setSelectedLocation(location) {
+    this.props.actions.requestBusinessInfoRecieved(location);
+    hashHistory.push('/selectedLocation');
+  }
+
   renderNearbyLocationEntries() {
     return this.props.nearbyLocations.nearbyLocations.map((location) => {
       return(
@@ -63,6 +56,7 @@ class Locations extends React.Component {
             <h2>{location.name}</h2>
             <h3>{location.categories[0].title}</h3>
             <Checkbox className='locationCheckBox' data-business-id={location.name}/>
+            <Button onClick={() => {this.setSelectedLocation.call(this, location)}}>Go to selected location</Button>
           </Thumbnail>
         </Col>
       );
@@ -109,7 +103,7 @@ class Locations extends React.Component {
   }
 
   getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/possibles/${1}/10`);
+    return axios.get(`/api/user/possibles/${facebookId}/${time}`);
   }
 
   findMatches() {

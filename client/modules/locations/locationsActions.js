@@ -16,7 +16,7 @@ export const requestBusinessInfoRecieved = (businessInfo) => {
   return {
     type: REQUEST_BUSINESS_INFO_RECIEVED,
     isFetching: false,
-    locationInfo: businessInfo.data
+    locationInfo: businessInfo
   };
 };
 
