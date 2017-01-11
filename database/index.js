@@ -43,9 +43,19 @@ var config = {
   port: 5432,
   database: process.env.DB_DATABASE,
   user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  ssl:true
+  password: process.env.DB_PASS
 };
+
+
+//
+// var config = {
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'nokkangendb'
+// };
+
+
+
 
 // Load and initialize pg-promise:
 var pgp = require('pg-promise')(options);
