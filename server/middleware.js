@@ -8,14 +8,22 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 
 const compiler = webpack(webpackConfig);
+const indexPath = path.join(__dirname, '../client/index-dev.html')
 
+// window.process.env.NODE_ENV = 'hello';
+// console.log(process.env.NODE_ENV)
 
 
 module.exports = function(app, express) {
+
+
+  if (process.env.NODE_ENV !== 'production') {
+    console.log("dev");
+    app.get('/', function (_, res) { res.sendFile(indexPath) });
+  }
+
   app.use('/', express.static(path.join(__dirname, '../client')));
 
-
-  if(process.env.NODE_ENV !== 'production') {
     app.use(webpackDevMiddleware(compiler, {
       publicPath: webpackConfig.output.publicPath,
       stats: {colors: true}
@@ -24,7 +32,7 @@ module.exports = function(app, express) {
     app.use(webpackHotMiddleware(compiler, {
       log: console.log
     }));
-  }
+
  //might need something like this to get webpacked files
   // app.get('/dist/main.js', function(req, res) {
   //   console.log('called');

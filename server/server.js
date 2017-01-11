@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 require('./middleware.js')(app, express);
 
 app.use('/', router);
-
+console.log("hello");
 app.get('/prospectiveMatches', prospectiveMatchesHandler.getProspectiveMatches);
 
 app.listen(port, () => {

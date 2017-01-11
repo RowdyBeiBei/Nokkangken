@@ -5,9 +5,6 @@ import {bindActionCreators} from 'redux';
 import axios from 'axios';
 import {hashHistory} from 'react-router';
 
-
-
-
 class Login extends React.Component {
 
   handleFblogin(event) {
