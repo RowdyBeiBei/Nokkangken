@@ -25,7 +25,7 @@ class ProspectiveMatches extends React.Component {
     this.setActiveProspect();
   }
 
-  leftSwipe() {
+  triggerDeny() {
     console.log('no');
     this.setActiveProspect();
   }
@@ -33,21 +33,29 @@ class ProspectiveMatches extends React.Component {
   renderProspectiveMatch() {
     return (
       <div>
-        <ProspectiveMatchEntry key={this.props.activeProspectiveMatch.activeProspectiveMatch.username} entry={this.props.activeProspectiveMatch.activeProspectiveMatch}/>
+        <ProspectiveMatchEntry
+          key={this.props.activeProspectiveMatch.activeProspectiveMatch.username}
+          entry={this.props.activeProspectiveMatch.activeProspectiveMatch}
+        />
         <button onClick={(event) => {this.triggerMatching(event);}}>Yes</button>
-        <button onClick={() => {this.leftSwipe();}}>No</button>
+        <button onClick={() => {this.triggerDeny();}}>No</button>
       </div>
     );
   }
 
   renderLoading() {
-    return <Loading/>;
+    console.log('loading');
+    return (
+      <div>
+        <h2>You have no matches at this time</h2>
+      </div>
+    );
   }
 
   render() {
     return (
       <div>
-        {this.props.activeProspectiveMatch === null ? this.renderLoading() : this.renderProspectiveMatch()}
+        {this.props.activeProspectiveMatch === null || this.props.activeProspectiveMatch.activeProspectiveMatch === undefined ? this.renderLoading() : this.renderProspectiveMatch()}
       </div>
     );
   }

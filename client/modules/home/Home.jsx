@@ -29,7 +29,7 @@ class Home extends React.Component {
   }
 
   getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/matches/${facebookId}/10`);
+    return axios.get(`/api/user/possibles/${1}/10`);
   }
 
   toggleModal() {
@@ -50,6 +50,7 @@ class Home extends React.Component {
     this.setState({
       disableAddMeeting: false
     });
+    this.props.actions.setDateTimePreferance(this.state.timePreferance);
   }
 
   getNearbyLocations({longitude, latitude}) {
@@ -78,7 +79,6 @@ class Home extends React.Component {
           <div className="col-md-8 col-md-offset-2">
             <div className="card hovercard">
               <div className="cardheader">
-
               </div>
               <div className="avatar">
                 <img alt="" src={this.props.user.picture} />

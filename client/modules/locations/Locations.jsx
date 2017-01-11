@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Link, hashHistory} from 'react-router';
 import Loading from 'react-loading';
 import axios from 'axios';
-import {Grid, Row, Col, Thumbnail, Checkbox} from 'react-bootstrap';
+import {Grid, Row, Col, Thumbnail, Checkbox, Button} from 'react-bootstrap';
 
 
 
@@ -62,7 +62,7 @@ class Locations extends React.Component {
           <Thumbnail src={location.image_url}>
             <h2>{location.name}</h2>
             <h3>{location.categories[0].title}</h3>
-            <Checkbox inPut/>
+            <Checkbox className='locationCheckBox' data-business-id={location.name}/>
           </Thumbnail>
         </Col>
       );
@@ -84,10 +84,50 @@ class Locations extends React.Component {
     );
   }
 
+  renderPossiblesList() {
+    let result = [];
+    document.querySelectorAll('.locationCheckBox input').forEach((node) => {
+      if(node.checked) {
+        result.push(node.dataset.businessId);
+      }
+    });
+    return result;
+  }
+
+  sendPossiblesList(timePreferance, facebookId, locationsList) {
+    // console.log(possiblesList);
+    axios.post('/api/user/possibleEvent', {
+      time: timePreferance,
+      facebookId: facebookId,
+      locations: locationsList
+    }).then(() => {
+      this.findMatches();
+    });
+    // {time: time, facebookId: facebookId, locations: [busId1, busId2...]}
+    // get matches then
+    // redirect to matches page
+  }
+
+  getProspectiveMatches(facebookId, time) {
+    return axios.get(`/api/user/possibles/${1}/10`);
+  }
+
+  findMatches() {
+    this.props.actions.requestProspectiveMatchesSent();
+    this.getProspectiveMatches(this.props.user.facebook_id, this.props.timePreferance.unix())
+    .then((matches) => {
+      this.props.actions.requestProspectiveMatchesRecieved(matches);
+      hashHistory.push('/prospectiveMatches');
+    });
+  }
+
   render() {
     return (
       <div>
         {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
+        <Button onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.facebook_id, this.renderPossiblesList());}}>
+          Checkout your possible matches
+        </Button>
       </div>
     );
   }
@@ -95,7 +135,9 @@ class Locations extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    nearbyLocations: state.nearbyLocations
+    user: state.user,
+    nearbyLocations: state.nearbyLocations,
+    timePreferance: state.timePreferance
   };
 };
 
