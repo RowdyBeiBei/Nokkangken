@@ -28,8 +28,7 @@ class SelectedLocation extends React.Component {
       <div>
         <button className="btn btn-primary mb3 mx1">back to locations</button>
         {this.props.selectedLocation.isFetching ? this.renderLoading() : this.renderSelectedLocation()}
-        <Link to='/locations'>
-        </Link>
+        <Link to='/locations'/>
       </div>
     );
   }
