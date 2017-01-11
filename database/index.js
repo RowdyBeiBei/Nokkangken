@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 //might want to use non-default promise library, bluebird seems good
 // var promise = require('bluebird');
 
@@ -19,7 +19,7 @@ var options = {
 
     // could select specific promise library here, otherwise default ES6
 //   promiseLib: promise,
-    
+
     // Extending the database protocol with our custom repositories:
   extend: obj => {
         // 1. Do not use 'require()' here, because this event occurs for every task
@@ -39,9 +39,12 @@ var options = {
 // Database connection parameters:
 //might want to add config.js/env variables for this
 var config = {
-  host: 'localhost',
+  host: process.env.DB_HOST,
   port: 5432,
-  database: 'nokkangendb'
+  database: process.env.DB_DATABASE,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+
 };
 
 // Load and initialize pg-promise:
