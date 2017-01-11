@@ -41,6 +41,7 @@ module.exports= {
       }
     }),
     new HTMLWebpackPlugin()
+
   ],
   target: 'web'
 };

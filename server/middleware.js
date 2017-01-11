@@ -15,14 +15,16 @@ module.exports = function(app, express) {
   app.use('/', express.static(path.join(__dirname, '../client')));
 
 
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    stats: {colors: true}
-  }));
+  if(process.env.NODE_ENV !== 'production') {
+    app.use(webpackDevMiddleware(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+      stats: {colors: true}
+    }));
 
-  app.use(webpackHotMiddleware(compiler, {
-    log: console.log
-  }));
+    app.use(webpackHotMiddleware(compiler, {
+      log: console.log
+    }));
+  }
  //might need something like this to get webpacked files
   // app.get('/dist/main.js', function(req, res) {
   //   console.log('called');

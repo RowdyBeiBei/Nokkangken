@@ -14,14 +14,17 @@
   </head>
   <body>
 
+    <div id='app'>
+    </div>
+
+    <script src='client/index.js'></script>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '166781447136758',
+          appId      : FACEBOOK_APPID,
           xfbml      : true,
           version    : 'v2.8'
         });
-
 
         FB.getLoginStatus(function(response){
           if (response.status === 'connected') {
@@ -41,11 +44,5 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
-
-    <div id='app'>
-    </div>
-
-    <script src='client/index.js'></script>
   </body>
 </html>
