@@ -8,17 +8,14 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 
 const compiler = webpack(webpackConfig);
-const indexPath = path.join(__dirname, '../client/index-dev.html')
-
-// window.process.env.NODE_ENV = 'hello';
-// console.log(process.env.NODE_ENV)
+const indexPath = path.join(__dirname, '../client/index-dev.html');
 
 
 module.exports = function(app, express) {
 
 
   if (process.env.NODE_ENV !== 'production') {
-    console.log("dev");
+    // console.log("dev");
     app.get('/', function (_, res) { res.sendFile(indexPath) });
   }
 

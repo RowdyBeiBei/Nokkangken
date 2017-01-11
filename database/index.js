@@ -38,6 +38,12 @@ var options = {
 
 // Database connection parameters:
 //might want to add config.js/env variables for this
+// var config = {
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'nokkangendb'
+// };
+
 var config = {
   host: process.env.DB_HOST,
   port: 5432,
@@ -45,15 +51,6 @@ var config = {
   user: process.env.DB_USER,
   password: process.env.DB_PASS
 };
-
-
-//
-// var config = {
-//   host: 'localhost',
-//   port: 5432,
-//   database: 'nokkangendb'
-// };
-
 
 
 
