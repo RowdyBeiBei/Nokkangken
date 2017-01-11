@@ -37,7 +37,8 @@ module.exports = {
     create: sql('responses/create.sql'),
     empty: sql('responses/empty.sql'),
     drop: sql('responses/drop.sql'),
-    init: sql('responses/init.sql')
+    init: sql('responses/init.sql'),
+    add: sql('responses/add.sql')
   },
   scheduleds: {
     create: sql('scheduleds/create.sql'),

@@ -30,9 +30,9 @@ exports.addPossibleEvent = (req, res) => {
   db.tx(t=>{
     return t.possibles.add({eventTime: +req.body.time, facebookId: +req.body.facebookId})
       .then(p => {
-        return req.body.locations.map(businessId => {
-          t.possibleLocations.add({businessId: businessId, possibleId: p.id});
-        });
+        return t.batch(req.body.locations.map(businessId => {
+          return t.possibleLocations.add({businessId: businessId, possibleId: p.id});
+        }));
       });
   })
   .then(data=> res.status(201).send(data))

@@ -24,6 +24,9 @@ module.exports = (rep, pgp) => {
 
         //add dummy data
     init: () => 
-        rep.manyOrNone(sql.init)
+        rep.manyOrNone(sql.init),
+
+    add: values =>
+        rep.one(sql.add, values)
   };
 };

@@ -17,9 +17,9 @@ db.tx(function (t) {
   ]);
 })
   .then(function (data) {
-        // SUCCESS, transaction committed
+    console.log('tables successfully created');
   })
   .catch(function (error) {
-        // ERROR, transaction rolled back
+    console.log('error', error);
   });  
 
