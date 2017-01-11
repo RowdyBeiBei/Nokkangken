@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
-    "start": "node server/server.js & node dbinit.js & node dbseed.js"
+    "start": "node server/server.js",
+    "dbinit": "node dbinit.js",
+    "dbseed": "node dbseed.js",
+    "postinstall": "npm dbinit && npm dbseed"
   },
   "author": "",
   "license": "ISC",
