@@ -2,6 +2,7 @@ var db = require('../../../database').db;
 
 //to-do, add error handling
 exports.getMatches = (req, res) => {
+  console.log(req.params);
   db.users.matches({facebookId: +req.params.facebookId, eventTime: +req.params.time})
    .then(data=>res.send(data));
 };
@@ -17,7 +18,6 @@ exports.addUser = (req, res) => {
     .catch(error=> res.status(409).send(error));
 };
 
-
 exports.updateUser = (req, res) => {
   db.users.update({facebookId: +req.body.facebookId, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
     .then(data=> res.status(204).send(data))
@@ -26,6 +26,7 @@ exports.updateUser = (req, res) => {
 
 //body input is {time: time, facebookId: facebookId, locations: [busId1, busId2...]}
 exports.addPossibleEvent = (req, res) => {
+  console.log(req.body);
   db.tx(t=>{
     return t.possibles.add({eventTime: +req.body.time, facebookId: +req.body.facebookId})
       .then(p => {
@@ -37,4 +38,3 @@ exports.addPossibleEvent = (req, res) => {
   .then(data=> res.status(201).send(data))
   .catch(error=> res.status(409).send(error));
 };
-
