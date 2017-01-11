@@ -23,13 +23,15 @@ module.exports = {
     create: sql('possibleLocations/create.sql'),
     empty: sql('possibleLocations/empty.sql'),
     drop: sql('possibleLocations/drop.sql'),
-    init: sql('possibleLocations/init.sql')
+    init: sql('possibleLocations/init.sql'),
+    add: sql('possibleLocations/add.sql')
   },
   possibles: {
     create: sql('possibles/create.sql'),
     empty: sql('possibles/empty.sql'),
     drop: sql('possibles/drop.sql'),
-    init: sql('possibles/init.sql')
+    init: sql('possibles/init.sql'), 
+    add: sql('possibles/add.sql')
   },
   responses: {
     create: sql('responses/create.sql'),
