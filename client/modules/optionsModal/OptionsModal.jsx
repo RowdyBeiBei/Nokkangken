@@ -1,6 +1,6 @@
 import React from 'react';
 import TimeSelector from '../timeSelector/TimeSelector.jsx';
-import {Modal, Button} from 'react-bootstrap';
+import {Modal, Button, ControlLabel} from 'react-bootstrap';
 
 
 class OptionsModal extends React.Component {
@@ -17,10 +17,11 @@ class OptionsModal extends React.Component {
             <Modal.Title>This is the modal</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Button block bsStyle='primary' >Scheduled</Button>
+            <Button block bsStyle='primary'>Scheduled</Button>
             <Button block bsStyle='primary' onClick={() => {this.getProspectiveMatches()}}>Find Matches</Button>
             <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
-            <TimeSelector setTimePreferance={this.props.setTimePreferance}/> 
+            <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
+            <ControlLabel>{this.props.timePreferance !== null ? this.props.timePreferance.format('llll') : null}</ControlLabel>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={() => {this.props.toggleModal();}}>Close</Button>

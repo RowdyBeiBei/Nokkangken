@@ -18,15 +18,25 @@ class ProspectiveMatches extends React.Component {
     this.props.actions.setActiveProspectiveMatch(this.props.prospectiveMatches.prospectiveMatches.pop());
   }
 
-  triggerMatching(event) {
+  repsonseRequest(wouldJoin, userId, eventTime, prospectId) {
+    return axios.post('/response', {
+      wouldJoin: wouldJoin,
+      userId: userId,
+      eventTime: eventTime,
+      prospectId: prospectId
+    });
+  }
+
+  triggerMatching(prospectId) {
     // trigger matching function. add possible match & check if this makes a match &
     // if it does add match to both users matches
+    this.reponseRequest(true, this.props.user.id, this.props.timePreferance, prospectId);
     console.log(event.target);
     this.setActiveProspect();
   }
 
-  triggerDeny() {
-    console.log('no');
+  triggerDeny(prospectId) {
+    this.reponseRequest(false, this.props.user.id, this.props.timePreferance, prospectId);
     this.setActiveProspect();
   }
 
@@ -64,7 +74,8 @@ class ProspectiveMatches extends React.Component {
 const mapStateToProps = (state) => {
   return {
     prospectiveMatches: state.prospectiveMatches,
-    activeProspectiveMatch: state.activeProspectiveMatch
+    activeProspectiveMatch: state.activeProspectiveMatch,
+    user: state.user
   };
 };
 
