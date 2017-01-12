@@ -24,10 +24,10 @@ exports.updateUser = (req, res) => {
     .catch(error=> res.status(400).send(error));
 };
 
-//body input is {time: time, facebookId: facebookId, locations: [busId1, busId2...]}
+//body input is {time: time, userId: userId, locations: [busId1, busId2...]}
 exports.addPossibleEvent = (req, res) => {
   db.tx(t=>{
-    return t.possibles.add({eventTime: +req.body.time, facebookId: +req.body.facebookId})
+    return t.possibles.add({eventTime: +req.body.time, userId: +req.body.userId})
       .then(p => {
         return t.batch(req.body.locations.map(businessId => {
           return t.possibleLocations.add({businessId: businessId, possibleId: p.id});
