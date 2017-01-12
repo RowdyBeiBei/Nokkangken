@@ -3,7 +3,7 @@ var db = require('../../../database').db;
 //to-do, add error handling
 exports.getMatches = (req, res) => {
   console.log(req.params);
-  db.users.matches({facebookId: +req.params.facebookId, eventTime: +req.params.time})
+  db.users.matches({userId: +req.params.userId, eventTime: +req.params.time})
    .then(data=>res.send(data));
 };
 
@@ -26,7 +26,6 @@ exports.updateUser = (req, res) => {
 
 //body input is {time: time, facebookId: facebookId, locations: [busId1, busId2...]}
 exports.addPossibleEvent = (req, res) => {
-  console.log(req.body);
   db.tx(t=>{
     return t.possibles.add({eventTime: +req.body.time, facebookId: +req.body.facebookId})
       .then(p => {
@@ -37,4 +36,17 @@ exports.addPossibleEvent = (req, res) => {
   })
   .then(data=> res.status(201).send(data))
   .catch(error=> res.status(409).send(error));
+};
+
+exports.getAllMatches = (req, res) => {
+  db.tx(t=>{
+    return t.possibles.getPossibles({userId: +req.params.userId})
+     .then(possibles => {
+       return t.batch(possibles.map(p => {
+         return t.users.matches({userId: p.id_user, eventTime: p.possibletime});
+       }));
+     });
+  })
+  .then(data=> res.status(200).send(data))
+  .catch(error=> res.status(404).send(error));
 };

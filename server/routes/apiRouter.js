@@ -3,7 +3,10 @@ var userHandler = require('../handlers/apiHandlers/userHandler.js');
 var responseHandler = require('../handlers/apiHandlers/responseHandler.js');
 
 //user endpoints
-router.get('/user/possibles/:facebookId/:time', userHandler.getMatches);
+//gets unvoted possible matches for a specific time
+router.get('/user/possibles/:userId/:time', userHandler.getMatches);
+//gets all unvoted possible matches
+router.get('/user/possibles/:userId', userHandler.getAllMatches);
 // router.post('/user/possibles/', userHandler.postMatches);
 router.get('/user/:facebookId', userHandler.getUser);
 router.post('/user', userHandler.addUser);
