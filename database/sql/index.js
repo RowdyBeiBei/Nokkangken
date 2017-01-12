@@ -31,7 +31,8 @@ module.exports = {
     empty: sql('possibles/empty.sql'),
     drop: sql('possibles/drop.sql'),
     init: sql('possibles/init.sql'), 
-    add: sql('possibles/add.sql')
+    add: sql('possibles/add.sql'),
+    getPossibles: sql('possibles/getPossibles.sql')
   },
   responses: {
     create: sql('responses/create.sql'),

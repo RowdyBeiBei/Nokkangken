@@ -1,0 +1,1 @@
+--gets all the users for an event (other than the current user themself)
