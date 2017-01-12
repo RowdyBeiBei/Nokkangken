@@ -1,7 +1,8 @@
 const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports= {
-  devtool: '#source-map',
+  devtool: 'cheap-module-source-map',
   entry: [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
@@ -28,7 +29,18 @@ module.exports= {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+    new HTMLWebpackPlugin()
   ],
   target: 'web'
 };
