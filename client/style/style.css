@@ -1,150 +1,162 @@
 body {
-  background-color: #ffffff;
-  background-image: -webkit-linear-gradient(270deg, rgba(157, 168, 168, 0.2), rgba(64, 48, 38, .4)), url("../assets/background2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment:fixed;
-  width: 100vw;
-  height: 100vh;
+    background-color: #ffffff;
+    background-image: -webkit-linear-gradient(270deg, rgba(157, 168, 168, 0.2), rgba(64, 48, 38, .4)), url("../assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
 }
 
-.header {
+.logo {
   font-family: 'Kavoon', cursive;
-  color: #fffff;
-  /*font-family: 'Fredoka One', cursive;*/
+  font-size: 40px;
+  color: #3260c7;
 }
+.header {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 24px;
+    /*font-family: 'Fredoka One', cursive;*/
+}
+
 .message {
-  font-size: 22px;
-  font-family: 'Baloo Thambi', cursive;
-  /*font-family: 'Source Serif Pro', serif;*/
+
+    font-size: 30px;
+    margin-bottom: 48px;
+    /*font-family: 'Source Serif Pro', serif;*/
     /*font-family: 'Righteous', cursive;*/
 }
+
 .btn {
-  font-family: 'Baloo Thambi', cursive;
+    font-family: 'Baloo Thambi', cursive;
 }
 
 .hero-container {
+    font-family: 'Baloo Thambi', cursive;
+    margin-top: 160px;
     font-size: 24px;
     color: #fff;
-    background: #696;
     width: 100%;
 }
 
+.hero-container .btn {
+    padding: 10px 40px;
+    font-size: 28px;
+}
+
 .login {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .loginDiv {
-  border: medium solid black;
+    border: medium solid black;
 }
 
 .profilePic {
-  height: 20%;
-  width: 20%;
+    height: 20%;
+    width: 20%;
 }
 
 .locationDiv {
-  position: relative;
-  border: medium solid black;
-  width: 32%;
-  height: 32%;
+    position: relative;
+    border: medium solid black;
+    width: 32%;
+    height: 32%;
 }
+
 .img-responsive {
-  height: 223.67px;
-  width: 336.9px;
+    height: 223.67px;
+    width: 336.9px;
 }
-.alert  {
-  background-color: lightblue;
-  border-color: lightblue;
+
+.alert {
+    background-color: lightblue;
+    border-color: lightblue;
 }
 
 .truncate {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 .checkBox {
-  position: absolute;
-  float: right;
-  width: 10%;
-  height: 10%;
+    position: absolute;
+    float: right;
+    width: 10%;
+    height: 10%;
 }
 
 .locationImg {
-  height: 20%;
-  width: 20%;
-}
-.selectedLocation {
-  border: medium solid black;
+    height: 20%;
+    width: 20%;
 }
 
-.centered-form .panel{
-	background: rgba(255, 255, 255, 0.8);
-	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+.selectedLocation {
+    border: medium solid black;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
 .btn-facebook {
-  color: #ffffff;
-  -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #2b4b90;
-  *background-color: #133783;
-  background-image: -moz-linear-gradient(top, #3b5998, #133783);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783));
-  background-image: -webkit-linear-gradient(top, #3b5998, #133783);
-  background-image: -o-linear-gradient(top, #3b5998, #133783);
-  background-image: linear-gradient(to bottom, #3b5998, #133783);
-  background-repeat: repeat-x;
-  border-color: #133783 #133783 #091b40;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-
+    color: #ffffff;
+    -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2b4b90;
+    *background-color: #133783;
+    background-image: -moz-linear-gradient(top, #3b5998, #133783);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783));
+    background-image: -webkit-linear-gradient(top, #3b5998, #133783);
+    background-image: -o-linear-gradient(top, #3b5998, #133783);
+    background-image: linear-gradient(to bottom, #3b5998, #133783);
+    background-repeat: repeat-x;
+    border-color: #133783 #133783 #091b40;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
-.btn-facebook:hover,
-.btn-facebook:focus,
-.btn-facebook:active,
-.btn-facebook.active,
-.btn-facebook.disabled,
-.btn-facebook[disabled] {
-  color: #ffffff;
-  background-color: #133783 !important;
-  *background-color: #102e6d !important;
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .btn-facebook.disabled, .btn-facebook[disabled] {
+    color: #ffffff;
+    background-color: #133783 !important;
+    *background-color: #102e6d !important;
 }
 
-.btn-facebook:active,
-.btn-facebook.active {
-  background-color: #0d2456 \9 !important;
+.btn-facebook:active, .btn-facebook.active {
+    background-color: #0d2456 \9 !important;
 }
 
 .timeSelector {
-  width: 100%;
-  border: medium solid black;
-  border-radius: 5px;
-  height:40px;
-  overflow: scroll;
-  margin-top: 1%;
+    width: 100%;
+    border: medium solid black;
+    border-radius: 5px;
+    height: 40px;
+    overflow: scroll;
+    margin-top: 1%;
 }
 
 .timeOption {
-  text-align: center;
-  font-size: large;
-  margin: 3px;
+    text-align: center;
+    font-size: large;
+    margin: 3px;
 }
 
 .modalButton {
-  width: 100%;
+    width: 100%;
 }
 
 .locationsDiv {
-  margin-top: 10vh;
+    margin-top: 10vh;
 }
 
- .modal-container {
-   position: relative;
- }
+.modal-container {
+    position: relative;
+}
 
- .modal-container .modal, .modal-container .modal-backdrop {
-   position: absolute;
- }
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
+}
