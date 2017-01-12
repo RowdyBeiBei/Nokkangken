@@ -89,6 +89,7 @@ class Home extends React.Component {
               </div>
               <div>
                 <CalendarSelector
+                   timePreferance={this.state.timePreferance}
                    toggleModal={this.toggleModal.bind(this)}
                    setTimePreferance={this.setTimePreferance.bind(this)}
                    showModal={this.state.showModal}
