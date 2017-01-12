@@ -3,8 +3,8 @@ const router = require('./router.js');
 const prospectiveMatchesHandler = require('./handlers/prospectiveMatchesHandler.js');
 
 require('dotenv').config();
-const token = process.env['access_token'] || require('../config.js').yelpKeys.access_token;
-console.log(`Bearer ${token}`);
+
+
 const app = express();
 const port = process.env.PORT || 3000;
 

@@ -37,6 +37,10 @@ module.exports = {
       return Promise.all(requestMap);
     }).then((locations) => {
       res.status(200).json(locations);
+    })
+    .catch(function(error){
+      console.log("Yelp API Error", error);
+      res.status(500).send(error);
     });
   },
   // ↓ this was used for detailed info which we are now getting from the start, we prolly dont need this
