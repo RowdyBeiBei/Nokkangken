@@ -1,6 +1,6 @@
 // const yelpKeys = require('../config.js').yelpKeys;
 const request = require('request-promise');
-const token = process.env['access_token'] || require('../config.js').yelpKeys.access_token;
+const token = process.env.access_token || require('../config.js').yelpKeys.access_token;
 
 module.exports = {
   getNearbyLocations: (req, res) => {
@@ -15,6 +15,7 @@ module.exports = {
       },
       json: true
     };
+
     request.get(optionsSearch).then((body) => {
       return body.businesses.map((location) => {
         return location.id;

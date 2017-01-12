@@ -13,11 +13,11 @@ const indexPath = path.join(__dirname, '../client/index-dev.html');
 
 module.exports = function(app, express) {
 
-
   if (process.env.NODE_ENV !== 'production') {
     // console.log("dev");
     app.get('/', function (_, res) { res.sendFile(indexPath) });
   }
+
 
   app.use('/', express.static(path.join(__dirname, '../client')));
 

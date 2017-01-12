@@ -14,7 +14,7 @@ var repos = {
   users_scheduleds: require('./repos/users_scheduleds')
 };
 
-// pg-promise initialization options:
+// pg-promise initialization options:``
 var options = {
 
     // could select specific promise library here, otherwise default ES6
@@ -45,9 +45,9 @@ var options = {
 // };
 
 var config = {
-  host: process.env.DB_HOST,
+  host: process.env.DB_HOST || 'localhost',
   port: 5432,
-  database: process.env.DB_DATABASE,
+  database: process.env.DB_DATABASE || 'nokkangendb',
   user: process.env.DB_USER,
   password: process.env.DB_PASS
 };

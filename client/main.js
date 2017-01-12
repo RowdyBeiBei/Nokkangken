@@ -14,7 +14,6 @@ import ProspectiveMatches from './modules/prospectiveMatches/ProspectiveMatches.
 
 // window.FACEBOOK_APPID = FACEBOOK_APPID;
 
-// console.log(FACEBOOK_APPID);
 
 const store = configureStore();
 
