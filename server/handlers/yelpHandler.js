@@ -7,7 +7,7 @@ module.exports = {
     const optionsSearch = {
       url: 'https://api.yelp.com/v3/businesses/search?',
       headers: {
-        'Authorization':  `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       },
       qs: {
         latitude: req.query.latitude,
