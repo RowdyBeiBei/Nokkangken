@@ -136,15 +136,14 @@ body {
     background-color: #0d2456 \9 !important;
 }
 
-<<<<<<< HEAD
-.timeSelector {
+/*.timeSelector {
     width: 100%;
     border: medium solid black;
     border-radius: 5px;
     height: 40px;
     overflow: scroll;
     margin-top: 1%;
-}
+}*/
 
 .timeOption {
     text-align: center;
@@ -191,5 +190,13 @@ body {
  }
 
  .Calendar-grid-item {
-   background-color: red;
+   /*background-color: white;*/
+ }
+
+ .activeCalendarItem {
+   background-color: blue;
+ }
+
+ .prospectiveMatchDiv {
+   margin-top: 5%;
  }

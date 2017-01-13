@@ -29,25 +29,8 @@ class Home extends React.Component {
     });
   }
 
-  findAllProspectiveMatches() {
-    this.props.actions.requestProspectiveMatchesSent();
-    this.getAllProspectiveMatches(this.props.user.id)
-    .then((matches) => {
-      let reducedMatches = matches.data.reduce((init, curr) => {
-        return init.concat(curr);
-      });
-      matches.data = reducedMatches;
-      this.props.actions.requestProspectiveMatchesRecieved(matches);
-      hashHistory.push('/prospectiveMatches');
-    });
-  }
-
   getProspectiveMatches(userId, time) {
     return axios.get(`/api/user/possibles/${userId}/${time}`);
-  }
-
-  getAllProspectiveMatches(userId) {
-    return axios.get(`/api/user/possibles/${userId}`)
   }
 
   toggleModal() {
@@ -114,8 +97,7 @@ class Home extends React.Component {
                    showModal={this.state.showModal}
                    setDatePreferance={this.setDatePreferance.bind(this)}
                    disableAddMeeting={this.state.disableAddMeeting}
-                   getProspectiveMatches={this.findMatches.bind(this)}
-                   getAllProspectiveMatches={this.findAllProspectiveMatches.bind(this)}
+                   allProspectiveMatches={this.props.allProspectiveMatches}
                  />
               </div>
             </div>
@@ -130,7 +112,8 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     userLocation: state.userLocation,
-    timePreferance: state.timePreferance
+    timePreferance: state.timePreferance,
+    allProspectiveMatches: state.allProspectiveMatches
   };
 };
 

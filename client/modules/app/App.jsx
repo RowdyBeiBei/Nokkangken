@@ -18,6 +18,10 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.findAllProspectiveMatches();
+  }
+
   getUserLocation() {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition((location, err) => {
@@ -33,6 +37,22 @@ class App extends React.Component {
     });
   }
 
+  findAllProspectiveMatches() {
+    this.props.actions.requestAllProspectiveMatchesSent();
+    this.getAllProspectiveMatches(this.props.user.id)
+    .then((matches) => {
+      let reducedMatches = matches.data.reduce((init, curr) => {
+        return init.concat(curr);
+      });
+      matches.data = reducedMatches;
+      this.props.actions.requestAllProspectiveMatchesRecieved(matches);
+    });
+  }
+
+  getAllProspectiveMatches(userId) {
+    return axios.get(`/api/user/possibles/${userId}`)
+  }
+
 
   render() {
     return (
@@ -46,7 +66,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    userLocation: state.userLocation
+    userLocation: state.userLocation,
+    user: state.user
   };
 };
 

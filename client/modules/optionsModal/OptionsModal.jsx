@@ -22,7 +22,7 @@ class OptionsModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Button block bsStyle='primary'>Scheduled</Button>
-            <Button block bsStyle='primary' onClick={() => {this.getAllProspectiveMatches()}}>Find Matches</Button>
+            <Button block bsStyle='primary' onClick={() => {this.getProspectiveMatches()}}>Find Matches</Button>
             <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
             <div className='timeSelectorDiv'>
               <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
