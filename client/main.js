@@ -5,14 +5,12 @@ import configureStore from './store/configureStore.js';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './modules/app/App.jsx';
 import Landing from './modules/landing/Landing.jsx';
-import Login from './modules/login/Login.jsx';
 import Signup from './modules/signup/Signup.jsx';
 import Locations from './modules/locations/Locations.jsx';
 import Home from './modules/home/Home.jsx';
 import SelectedLocation from './modules/selectedLocation/SelectedLocation.jsx';
 import ProspectiveMatches from './modules/prospectiveMatches/ProspectiveMatches.jsx';
 
-// window.FACEBOOK_APPID = FACEBOOK_APPID;
 
 
 const store = configureStore();
@@ -24,7 +22,6 @@ ReactDOM.render(
      <Router history={hashHistory}>
        <Route path='/' component={Landing}>
         <Route path='/signup' component={Signup}/>
-        <Route path='/login' component={Login}/>
        </Route>
        <Route path='/home' component={App}>
         <IndexRoute component={Home}/>

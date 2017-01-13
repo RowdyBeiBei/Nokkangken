@@ -10,6 +10,7 @@ class Login extends React.Component {
   handleFblogin(event) {
     const that = this;
     FB.getLoginStatus(function(response){
+      console.log(response.status);
       if (response.status === 'connected') {
         FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
           that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
@@ -64,8 +65,9 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Login via facebook" onClick={(event) => { this.handleFblogin(event);}}/>
-        <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Signup via facebook" onClick={(event) => { this.handleFbSignup(event);}}/>
+
+        {/* <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Login via facebook"  onClick={(event) => { this.handleFblogin(event);}}/>
+        <input className="btn btn-lg btn-facebook btn-block my1" type="submit" value="Signup via facebook" onClick={(event) => { this.handleFbSignup(event);}}/> */}
       </div>
     );
   }

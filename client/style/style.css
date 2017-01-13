@@ -21,6 +21,12 @@ body {
     /*font-family: 'Fredoka One', cursive;*/
 }
 
+.fb-login-button{
+  padding: 0px 0px;
+
+}
+
+
 .message {
 
     font-size: 30px;

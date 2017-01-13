@@ -1,4 +1,4 @@
-import {LOGIN} from '../loginActions.js';
+import {LOGIN} from './loginActions.js';
 
 const userData = (state = null, action) => {
   switch (action.type) {
