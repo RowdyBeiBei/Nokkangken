@@ -39,7 +39,7 @@ exports.addPossibleEvent = (req, res) => {
 };
 
 exports.getAllMatches = (req, res) => {
-  db.tx(t=>{
+  db.task(t=>{
     return t.possibles.getPossibles({userId: +req.params.userId})
      .then(possibles => {
        return t.batch(possibles.map(p => {
