@@ -2,6 +2,7 @@ const express = require('express');
 const router = require('./router.js');
 const prospectiveMatchesHandler = require('./handlers/prospectiveMatchesHandler.js');
 
+require('dotenv').config();
 
 
 const app = express();

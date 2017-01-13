@@ -5,9 +5,9 @@ const token = process.env['access_token'] || require('../config.js').yelpKeys.ac
 module.exports = {
   getNearbyLocations: (req, res) => {
     const optionsSearch = {
-      url: 'https://api.yelp.com/v3/businesses/search?',
+      url: 'https://api.yelp.com/v3/businesses/search',
       headers: {
-        'Authorization':  `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       },
       qs: {
         latitude: req.query.latitude,
@@ -15,6 +15,7 @@ module.exports = {
       },
       json: true
     };
+
     request.get(optionsSearch).then((body) => {
       return body.businesses.map((location) => {
         return location.id;
@@ -36,6 +37,10 @@ module.exports = {
       return Promise.all(requestMap);
     }).then((locations) => {
       res.status(200).json(locations);
+    })
+    .catch(function(error){
+      console.log("Yelp API Error", error);
+      res.status(500).send(error);
     });
   },
   // ↓ this was used for detailed info which we are now getting from the start, we prolly dont need this
