@@ -30,13 +30,13 @@ class ProspectiveMatches extends React.Component {
   triggerMatching(prospectId) {
     // trigger matching function. add possible match & check if this makes a match &
     // if it does add match to both users matches
-    this.reponseRequest(true, this.props.user.id, this.props.timePreferance, prospectId);
+    this.reponseRequest(true, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
     console.log(event.target);
     this.setActiveProspect();
   }
 
   triggerDeny(prospectId) {
-    this.reponseRequest(false, this.props.user.id, this.props.timePreferance, prospectId);
+    this.reponseRequest(false, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
     this.setActiveProspect();
   }
 

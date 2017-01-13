@@ -18,6 +18,7 @@ class CalendarSelector extends React.Component {
         <OptionsModal
           timePreferance={this.props.timePreferance}
           getProspectiveMatches={this.props.getProspectiveMatches}
+          getAllProspectiveMatches={this.props.getAllProspectiveMatches}
           showModal={this.props.showModal}
           setTimePreferance={this.props.setTimePreferance}
           toggleModal={this.props.toggleModal}

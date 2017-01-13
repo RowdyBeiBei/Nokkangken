@@ -9,6 +9,10 @@ class OptionsModal extends React.Component {
     this.props.getProspectiveMatches();
   }
 
+  getAllProspectiveMatches() {
+    this.props.getAllProspectiveMatches();
+  }
+
   render() {
     return (
       <div className='modal-container'>
@@ -18,10 +22,12 @@ class OptionsModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Button block bsStyle='primary'>Scheduled</Button>
-            <Button block bsStyle='primary' onClick={() => {this.getProspectiveMatches()}}>Find Matches</Button>
+            <Button block bsStyle='primary' onClick={() => {this.getAllProspectiveMatches()}}>Find Matches</Button>
             <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
-            <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
-            <ControlLabel>{this.props.timePreferance !== null ? this.props.timePreferance.format('llll') : null}</ControlLabel>
+            <div className='timeSelectorDiv'>
+              <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
+              <ControlLabel bsClass='controlLabel control-label'>{this.props.timePreferance !== null ? this.props.timePreferance.format('llll') : null}</ControlLabel>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={() => {this.props.toggleModal();}}>Close</Button>

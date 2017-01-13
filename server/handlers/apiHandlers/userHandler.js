@@ -2,9 +2,9 @@ var db = require('../../../database').db;
 
 //to-do, add error handling
 exports.getMatches = (req, res) => {
-  console.log(req.params);
+  console.log(req.params, 'this is getMatches');
   db.users.matches({userId: +req.params.userId, eventTime: +req.params.time})
-   .then(data=>res.send(data));
+   .then(data=>{console.log(data);res.send(data);});
 };
 
 exports.getUser = (req, res) => {
@@ -26,6 +26,7 @@ exports.updateUser = (req, res) => {
 
 //body input is {time: time, userId: userId, locations: [busId1, busId2...]}
 exports.addPossibleEvent = (req, res) => {
+  console.log(req.body, 'this is the addpossiblevent');
   db.tx(t=>{
     return t.possibles.add({eventTime: +req.body.time, userId: +req.body.userId})
       .then(p => {

@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Link, hashHistory} from 'react-router';
 import axios from 'axios';
 import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
+// import Calendar from '../calendar/Calendar.jsx';
 import OptionsModal from '../optionsModal/OptionsModal.jsx';
 import moment from 'moment';
 
@@ -21,15 +22,32 @@ class Home extends React.Component {
 
   findMatches() {
     this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches(this.props.user.facebook_id, this.state.timePreferance.unix())
+    this.getProspectiveMatches(this.props.user.id, this.state.timePreferance.unix())
     .then((matches) => {
       this.props.actions.requestProspectiveMatchesRecieved(matches);
       hashHistory.push('/prospectiveMatches');
     });
   }
 
-  getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/possibles/${facebookId}/${time}`);
+  findAllProspectiveMatches() {
+    this.props.actions.requestProspectiveMatchesSent();
+    this.getAllProspectiveMatches(this.props.user.id)
+    .then((matches) => {
+      let reducedMatches = matches.data.reduce((init, curr) => {
+        return init.concat(curr);
+      });
+      matches.data = reducedMatches;
+      this.props.actions.requestProspectiveMatchesRecieved(matches);
+      hashHistory.push('/prospectiveMatches');
+    });
+  }
+
+  getProspectiveMatches(userId, time) {
+    return axios.get(`/api/user/possibles/${userId}/${time}`);
+  }
+
+  getAllProspectiveMatches(userId) {
+    return axios.get(`/api/user/possibles/${userId}`)
   }
 
   toggleModal() {
@@ -88,6 +106,7 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
+                {/* <Calendar/> */}
                 <CalendarSelector
                    timePreferance={this.state.timePreferance}
                    toggleModal={this.toggleModal.bind(this)}
@@ -96,6 +115,7 @@ class Home extends React.Component {
                    setDatePreferance={this.setDatePreferance.bind(this)}
                    disableAddMeeting={this.state.disableAddMeeting}
                    getProspectiveMatches={this.findMatches.bind(this)}
+                   getAllProspectiveMatches={this.findAllProspectiveMatches.bind(this)}
                  />
               </div>
             </div>
