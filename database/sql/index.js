@@ -33,6 +33,7 @@ module.exports = {
     init: sql('possibles/init.sql'), 
     add: sql('possibles/add.sql'),
     getPossibles: sql('possibles/getPossibles.sql'),
+    getAPossible: sql('/possibles/getAPossible.sql'),
     delete: sql('possibles/delete.sql')
   },
   responses: {
@@ -45,7 +46,8 @@ module.exports = {
   scheduleds: {
     create: sql('scheduleds/create.sql'),
     empty: sql('scheduleds/empty.sql'),
-    drop: sql('scheduleds/drop.sql')
+    drop: sql('scheduleds/drop.sql'),
+    add: sql('scheduleds/add.sql')
   },
   users: {
     create: sql('users/create.sql'),
@@ -61,7 +63,8 @@ module.exports = {
   users_scheduleds: {
     create: sql('users_scheduleds/create.sql'),
     empty: sql('users_scheduleds/empty.sql'),
-    drop: sql('users_scheduleds/drop.sql')
+    drop: sql('users_scheduleds/drop.sql'),
+    add: sql('users_scheduleds/add.sql')
   }
   
 

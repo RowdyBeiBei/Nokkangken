@@ -29,8 +29,11 @@ module.exports = (rep, pgp) => {
     add: values =>
         rep.one(sql.add, values),
     
-    getPossibles: userId =>
-        rep.manyOrNone(sql.getPossibles, userId),
+    getPossibles: values =>
+        rep.manyOrNone(sql.getPossibles, values),
+    
+    getAPossible: values =>
+        rep.one(sql.getAPossible, values),
     
     delete: id =>
         rep.one(sql.delete, id)
