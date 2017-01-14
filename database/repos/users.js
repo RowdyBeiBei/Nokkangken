@@ -26,18 +26,23 @@ module.exports = (rep, pgp) => {
     init: () => 
         rep.manyOrNone(sql.init),
 
+        //retrieves all potential matches (that haven't been seen yet) for a user at a specific time
     matches: values => 
       rep.manyOrNone(sql.matches, values),
 
+      //checks if the user has a match for a specific time
     checkMatch: values =>
         rep.oneOrNone(sql.checkMatch, values),
-
+        
+        //gets information about a single user 
     getUser: values =>
         rep.oneOrNone(sql.getUser, values),
-
+        
+        //creates a new user entry
     addUser: values =>
         rep.one(sql.add, values),
     
+        //updates an existing user entry--if inputs any are null, will keep current values
     update: values =>
         rep.none(sql.update, values)
     

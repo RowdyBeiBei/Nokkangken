@@ -13,7 +13,7 @@ router.post('/user', userHandler.addUser);
 router.put('/user', userHandler.updateUser);
 router.post('/user/possibleEvent', userHandler.addPossibleEvent);
 
-router.post('/response', responseHandler.addResponse);
+router.post('/response', responseHandler.submitResponse);
 
 
 module.exports = router;

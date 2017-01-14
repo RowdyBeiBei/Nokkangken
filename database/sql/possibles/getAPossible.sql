@@ -1,0 +1,1 @@
+SELECT * FROM possibles WHERE id_user = ${userId} AND possibleTime = ${eventTime};
