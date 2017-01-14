@@ -4,7 +4,8 @@ var db = require('../../../database').db;
 exports.getMatches = (req, res) => {
   console.log(req.params, 'this is getMatches');
   db.users.matches({userId: +req.params.userId, eventTime: +req.params.time})
-   .then(data=>{console.log(data);res.send(data);});
+   .then(data=>{res.status(200).send(data);})
+   .catch(data=>{res.status(400).send(data);});
 };
 
 exports.getUser = (req, res) => {
@@ -13,6 +14,7 @@ exports.getUser = (req, res) => {
 };
 
 exports.addUser = (req, res) => {
+  console.log(req.body, 5);
   db.users.addUser({facebookId: +req.body.id, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
     .then(data=> res.status(201).send(data))
     .catch(error=> res.status(409).send(error));

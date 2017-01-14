@@ -88,11 +88,11 @@ class Locations extends React.Component {
     return result;
   }
 
-  sendPossiblesList(timePreferance, facebookId, locationsList) {
+  sendPossiblesList(timePreferance, userId, locationsList) {
     // console.log(possiblesList);
     axios.post('/api/user/possibleEvent', {
       time: timePreferance,
-      facebookId: facebookId,
+      userId: userId,
       locations: locationsList
     }).then(() => {
       this.findMatches();
@@ -119,7 +119,7 @@ class Locations extends React.Component {
     return (
       <div>
         {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-        <Button onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.facebook_id, this.renderPossiblesList());}}>
+        <Button onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
           Checkout your possible matches
         </Button>
       </div>

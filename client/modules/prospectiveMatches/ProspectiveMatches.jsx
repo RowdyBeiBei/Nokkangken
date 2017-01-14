@@ -19,7 +19,7 @@ class ProspectiveMatches extends React.Component {
   }
 
   repsonseRequest(wouldJoin, userId, eventTime, prospectId) {
-    return axios.post('/response', {
+    return axios.post('/api/response', {
       wouldJoin: wouldJoin,
       userId: userId,
       eventTime: eventTime,
@@ -28,10 +28,7 @@ class ProspectiveMatches extends React.Component {
   }
 
   triggerMatching(prospectId) {
-    // trigger matching function. add possible match & check if this makes a match &
-    // if it does add match to both users matches
-    this.reponseRequest(true, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
-    console.log(event.target);
+    this.responseRequest(true, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
     this.setActiveProspect();
   }
 
