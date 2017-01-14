@@ -198,5 +198,31 @@ body {
  }
 
  .prospectiveMatchDiv {
-   margin-top: 5%;
+   margin-top: 10%;
+   height: 70vh;
+   background-color: white;
+   border-radius: 5px;
  }
+
+.prospectiveMatchView {
+  margin-top: 5%;
+  height: 80%;
+}
+
+.prospectiveMatchInfoDiv {
+  height: 80%;
+  width: 100%;
+}
+
+.possiblesPic {
+  margin-top: 3.5%;
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+  box-shadow: 0 0 4px black;
+}
+
+.prospectiveMatchEntryRow {
+  height: 60%;
+  width: 40%;
+}
