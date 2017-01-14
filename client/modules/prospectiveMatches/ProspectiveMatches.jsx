@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import axios from 'axios';
 import Loading from 'react-loading';
 import ProspectiveMatchEntry from '../prospectiveMatchEntry/ProspectiveMatchEntry.jsx';
-import {Button} from 'react-bootstrap';
+import {Button, Grid, Row, Col} from 'react-bootstrap';
 
 
 class ProspectiveMatches extends React.Component {
@@ -39,31 +39,33 @@ class ProspectiveMatches extends React.Component {
 
   renderProspectiveMatch() {
     return (
-      <div>
-        <ProspectiveMatchEntry
-          key={this.props.activeProspectiveMatch.activeProspectiveMatch.username}
-          entry={this.props.activeProspectiveMatch.activeProspectiveMatch}
-        />
-        <button onClick={(event) => {this.triggerMatching(event);}}>Yes</button>
-        <button onClick={() => {this.triggerDeny();}}>No</button>
-      </div>
+      <Row>
+        <Col bsClass='prospectiveMatchDiv col' sm={3} md={4} mdOffset={4}>
+          <ProspectiveMatchEntry
+            key={this.props.activeProspectiveMatch.activeProspectiveMatch.username}
+            entry={this.props.activeProspectiveMatch.activeProspectiveMatch}
+          />
+          <Button block bsStyle='success' onClick={(event) => {this.triggerMatching(event);}}>Yes</Button>
+          <Button block bsStyle='warning' onClick={() => {this.triggerDeny();}}>No</Button>
+        </Col>
+      </Row>
     );
   }
 
   renderLoading() {
     console.log('loading');
     return (
-      <div>
+      <Row>
         <h2>You have no matches at this time</h2>
-      </div>
+      </Row>
     );
   }
 
   render() {
     return (
-      <div>
+      <Grid bsClass='prospectiveMatchView container'>
         {this.props.activeProspectiveMatch === null || this.props.activeProspectiveMatch.activeProspectiveMatch === undefined ? this.renderLoading() : this.renderProspectiveMatch()}
-      </div>
+      </Grid>
     );
   }
 }

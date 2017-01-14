@@ -1,13 +1,13 @@
 import React from 'react';
+import {Image} from 'react-bootstrap';
 
 class ProspectiveMatchEntry extends React.Component {
 
   render() {
     return (
-      <div className='prospectiveMatchDiv'>
+      <div className='prospectiveMatchInfoDiv'>
+        <Image bsClass='possiblesPic img' src={this.props.entry.picture} responsive/>
         <h2>{this.props.entry.name}</h2>
-        <img className='profilePic' src={this.props.entry.picture}/>
-        <p>{this.props.entry.bio}</p>
       </div>
     );
   }
