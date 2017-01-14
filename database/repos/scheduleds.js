@@ -24,7 +24,10 @@ module.exports = (rep, pgp) => {
     
     //adds a single event to the scheduleds table
     add: values =>
-        rep.one(sql.add, values)
-
+        rep.one(sql.add, values),
+    
+    //retrieves all the scheduled events for a user (only returns id, time, businessId of the event)
+    getEvents: values =>
+        rep.manyOrNone(sql.getEvents, values)
   };
 };
