@@ -13,18 +13,19 @@ class Landing extends React.Component {
 	handleFblogin(event) {
     const that = this;
     FB.getLoginStatus(function(response){
+			// console.log(response.status);
       if (response.status === 'connected') {
         FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-					that.props.actions.login(response);
-					 hashHistory.push('/home');
-
-        });
+          that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
+             hashHistory.push('/home')});
+          }
+        );
       } else {
         console.log('not connected');
         FB.login(function(response) {
           FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-						that.props.actions.login(response);
-  					 hashHistory.push('/home');
+            that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
+               hashHistory.push('/home')});
         });
      });
      }
@@ -36,16 +37,14 @@ class Landing extends React.Component {
      FB.getLoginStatus(function(response){
        if (response.status === 'connected') {
          FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-					 that.props.actions.login(response);
- 					 hashHistory.push('/home');
-
+					 that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
+							hashHistory.push('/home')});
          });
        } else {
          console.log('not connected')
          FB.login(function(response) {
            FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-						that.props.actions.login(response);
-  					 hashHistory.push('/home');
+             that.addUser(response).then((response) => {that.props.actions.login(response.data)});
          });
       });
       }

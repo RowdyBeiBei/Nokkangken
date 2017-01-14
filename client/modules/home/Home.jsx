@@ -82,7 +82,7 @@ class Home extends React.Component {
               <div className="cardheader">
               </div>
               <div className="avatar">
-                <img alt="" src={this.props.user.picture.data.url} />
+                <img alt="" src={this.props.user.picture} />
               </div>
               <div className="info">
                 <div className="title">{this.props.user.name}</div>
