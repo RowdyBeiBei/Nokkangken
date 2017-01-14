@@ -14,7 +14,6 @@ exports.getUser = (req, res) => {
 };
 
 exports.addUser = (req, res) => {
-  console.log(req.body, 5);
   db.users.addUser({facebookId: +req.body.id, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
     .then(data=> res.status(201).send(data))
     .catch(error=> res.status(409).send(error));
