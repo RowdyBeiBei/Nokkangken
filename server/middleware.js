@@ -15,7 +15,7 @@ module.exports = function(app, express) {
 
   if (process.env.NODE_ENV !== 'production') {
     // console.log("dev");
-    app.get('/', function (_, res) { res.sendFile(indexPath) });
+    app.use('/', function (_, res) { res.sendFile(indexPath) });
   }
 
 
@@ -23,7 +23,8 @@ module.exports = function(app, express) {
 
     app.use(webpackDevMiddleware(compiler, {
       publicPath: webpackConfig.output.publicPath,
-      stats: {colors: true}
+      stats: {colors: true},
+      historyApiFallback: true
     }));
 
     app.use(webpackHotMiddleware(compiler, {
