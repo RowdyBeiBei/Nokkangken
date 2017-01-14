@@ -4,7 +4,8 @@ var db = require('../../../database').db;
 exports.getMatches = (req, res) => {
   console.log(req.params, 'this is getMatches');
   db.users.matches({userId: +req.params.userId, eventTime: +req.params.time})
-   .then(data=>{console.log(data);res.send(data);});
+   .then(data=>{res.status(200).send(data);})
+   .catch(data=>{res.status(400).send(data);});
 };
 
 exports.getUser = (req, res) => {
