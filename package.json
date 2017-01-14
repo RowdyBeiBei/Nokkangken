@@ -28,6 +28,7 @@
     "elemental": "^0.6.1",
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.26.0",
+    "input-moment": "^0.3.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "lodash": "^4.17.4",

@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Link, hashHistory} from 'react-router';
 import axios from 'axios';
 import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
+// import Calendar from '../calendar/Calendar.jsx';
 import OptionsModal from '../optionsModal/OptionsModal.jsx';
 import moment from 'moment';
 
@@ -21,15 +22,15 @@ class Home extends React.Component {
 
   findMatches() {
     this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches(this.props.user.facebook_id, this.state.timePreferance.unix())
+    this.getProspectiveMatches(this.props.user.id, this.state.timePreferance.unix())
     .then((matches) => {
       this.props.actions.requestProspectiveMatchesRecieved(matches);
       hashHistory.push('/prospectiveMatches');
     });
   }
 
-  getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/possibles/${facebookId}/${time}`);
+  getProspectiveMatches(userId, time) {
+    return axios.get(`/api/user/possibles/${userId}/${time}`);
   }
 
   toggleModal() {
@@ -88,6 +89,7 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
+                {/* <Calendar/> */}
                 <CalendarSelector
                    timePreferance={this.state.timePreferance}
                    toggleModal={this.toggleModal.bind(this)}
@@ -95,7 +97,7 @@ class Home extends React.Component {
                    showModal={this.state.showModal}
                    setDatePreferance={this.setDatePreferance.bind(this)}
                    disableAddMeeting={this.state.disableAddMeeting}
-                   getProspectiveMatches={this.findMatches.bind(this)}
+                   allProspectiveMatches={this.props.allProspectiveMatches}
                  />
               </div>
             </div>
@@ -110,7 +112,8 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     userLocation: state.userLocation,
-    timePreferance: state.timePreferance
+    timePreferance: state.timePreferance,
+    allProspectiveMatches: state.allProspectiveMatches
   };
 };
 

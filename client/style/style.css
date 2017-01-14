@@ -136,19 +136,40 @@ body {
     background-color: #0d2456 \9 !important;
 }
 
-.timeSelector {
+/*.timeSelector {
     width: 100%;
     border: medium solid black;
     border-radius: 5px;
     height: 40px;
     overflow: scroll;
     margin-top: 1%;
-}
+}*/
 
 .timeOption {
     text-align: center;
     font-size: large;
     margin: 3px;
+}
+
+.timeSelectorDiv {
+  margin-top: 1%;
+}
+
+.timeSelector.dropdown-menu {
+  height: 20vh;
+  overflow: scroll;
+}
+
+/*.timeOption {
+  text-align: center;
+  font-size: large;
+  margin: 3px;
+}*/
+
+.controlLabel {
+  margin-top: 1%;
+  position: absolute;
+  right: 10%;
 }
 
 .modalButton {
@@ -163,6 +184,19 @@ body {
     position: relative;
 }
 
-.modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
-}
+
+ .modal-container .modal, .modal-container .modal-backdrop {
+   position: absolute;
+ }
+
+ .Calendar-grid-item {
+   /*background-color: white;*/
+ }
+
+ .activeCalendarItem {
+   background-color: blue;
+ }
+
+ .prospectiveMatchDiv {
+   margin-top: 5%;
+ }

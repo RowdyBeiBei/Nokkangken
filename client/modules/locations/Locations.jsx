@@ -102,13 +102,13 @@ class Locations extends React.Component {
     // redirect to matches page
   }
 
-  getProspectiveMatches(facebookId, time) {
-    return axios.get(`/api/user/possibles/${facebookId}/${time}`);
+  getProspectiveMatches(userId, time) {
+    return axios.get(`/api/user/possibles/${userId}/${time}`);
   }
 
   findMatches() {
     this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches(this.props.user.facebook_id, this.props.timePreferance.unix())
+    this.getProspectiveMatches(this.props.user.id, this.props.timePreferance.unix())
     .then((matches) => {
       this.props.actions.requestProspectiveMatchesRecieved(matches);
       hashHistory.push('/prospectiveMatches');

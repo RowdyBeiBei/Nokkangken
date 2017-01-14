@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as Actions from './prospectiveMatchesActions.js';
+import * as Actions from './allProspectiveMatchesActions.js';
 import {bindActionCreators} from 'redux';
 import axios from 'axios';
 import Loading from 'react-loading';
@@ -8,14 +8,14 @@ import ProspectiveMatchEntry from '../prospectiveMatchEntry/ProspectiveMatchEntr
 import {Button} from 'react-bootstrap';
 
 
-class ProspectiveMatches extends React.Component {
+class AllProspectiveMatches extends React.Component {
 
   componentWillMount() {
     this.setActiveProspect();
   }
 
   setActiveProspect() {
-    this.props.actions.setActiveProspectiveMatch(this.props.prospectiveMatches.prospectiveMatches.pop());
+    this.props.actions.setActiveProspectiveMatch(this.props.allProspectiveMatches.allProspectiveMatches.pop());
   }
 
   repsonseRequest(wouldJoin, userId, eventTime, prospectId) {
@@ -75,6 +75,7 @@ const mapStateToProps = (state) => {
   return {
     prospectiveMatches: state.prospectiveMatches,
     activeProspectiveMatch: state.activeProspectiveMatch,
+    allProspectiveMatches: state.allProspectiveMatches,
     user: state.user
   };
 };
@@ -85,4 +86,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 } ;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProspectiveMatches);
+export default connect(mapStateToProps, mapDispatchToProps)(AllProspectiveMatches);
