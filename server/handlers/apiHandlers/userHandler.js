@@ -14,6 +14,11 @@ exports.getUser = (req, res) => {
 };
 
 exports.addUser = (req, res) => {
+  //check db if user exists already
+  //if user does not exist, then add user
+  // db.users.getUser({facebookId: +req.body.id})
+  //   .then(data=>res.send(data));
+
   db.users.addUser({facebookId: +req.body.id, name: req.body.name, email: req.body.email, bio: req.body.bio, picture: req.body.picture})
     .then(data=> res.status(201).send(data))
     .catch(error=> res.status(409).send(error));
