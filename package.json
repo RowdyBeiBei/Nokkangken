@@ -8,7 +8,6 @@
     "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
     "start": "node server/server.js",
     "initDB": "node dbinit.js && node dbseed.js"
-
   },
   "author": "",
   "license": "ISC",

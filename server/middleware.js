@@ -15,7 +15,7 @@ module.exports = function(app, express) {
 
   if (process.env.NODE_ENV !== 'production') {
     // console.log("dev");
-    app.use('/', function (_, res) { res.sendFile(indexPath) });
+    app.get('/', function (_, res) { res.sendFile(indexPath) });
   }
 
 
