@@ -13,22 +13,18 @@ class CalendarSelector extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(this.props.allProspectiveMatches.isFetching === false && this.props.allProspectiveMatches.allProspectiveMatches !== prevProps.allProspectiveMatches.allProspectiveMatches) {
+    if(this.props.allProspectiveMatches.isFetching === false && this.props.allProspectiveMatches.allProspectiveMatches !== prevProps.allProspectiveMatches.allProspectiveMatchesgit ) {
       let calendarGridItems = document.querySelectorAll('.Calendar-grid-item');
       this.possibleMatchDayGenerator().forEach((possibleDay) => {
-        console.log(possibleDay.possibletime);
-        calendarGridItems[possibleDay.possibletime - 1].style.backgroundColor = 'blue';
+        calendarGridItems[possibleDay - 1].style.backgroundColor = 'blue';
       });
     }
   }
 
   possibleMatchDayGenerator() {
-    let matchDays = this.props.allProspectiveMatches.allProspectiveMatches.map((prospectiveMatch) => {
-      console.log(moment(this.props.allProspectiveMatches.allProspectiveMatches.possibletime));
-      prospectiveMatch.possibletime = moment.unix(+prospectiveMatch.possibletime).format('D');
-      return prospectiveMatch;
+    return this.props.allProspectiveMatches.allProspectiveMatches.map((prospectiveMatch) => {
+       return moment.unix(+prospectiveMatch.possibletime).format('D');
     });
-    return matchDays;
   }
 
 

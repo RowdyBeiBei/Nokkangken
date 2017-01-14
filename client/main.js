@@ -10,6 +10,7 @@ import Locations from './modules/locations/Locations.jsx';
 import Home from './modules/home/Home.jsx';
 import SelectedLocation from './modules/selectedLocation/SelectedLocation.jsx';
 import ProspectiveMatches from './modules/prospectiveMatches/ProspectiveMatches.jsx';
+import AllProspectiveMatches from './modules/allProspectiveMatches/AllProspectiveMatches.jsx';
 
 
 
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path='/locations' component={Locations}/>
         <Route path='/selectedLocation' component={SelectedLocation}/>
         <Route path='/prospectiveMatches' component={ProspectiveMatches}/>
+        <Route path='/allProspectiveMatches' component={AllProspectiveMatches}/>
       </Route>
     </Router>
   </Provider>,

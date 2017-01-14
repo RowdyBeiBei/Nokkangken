@@ -1,6 +1,7 @@
 import React from 'react';
 import TimeSelector from '../timeSelector/TimeSelector.jsx';
 import {Modal, Button, ControlLabel} from 'react-bootstrap';
+import {hashHistory} from 'react-router';
 
 
 class OptionsModal extends React.Component {
@@ -22,8 +23,8 @@ class OptionsModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Button block bsStyle='primary'>Scheduled</Button>
-            <Button block bsStyle='primary' onClick={() => {this.getProspectiveMatches()}}>Find Matches</Button>
-            <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new Meeting</Button>
+            <Button block bsStyle='primary' onClick={() => {hashHistory.push('/allProspectiveMatches')}}>Show possible matches</Button>
+            <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new meeting</Button>
             <div className='timeSelectorDiv'>
               <TimeSelector setTimePreferance={this.props.setTimePreferance}/>
               <ControlLabel bsClass='controlLabel control-label'>{this.props.timePreferance !== null ? this.props.timePreferance.format('llll') : null}</ControlLabel>
