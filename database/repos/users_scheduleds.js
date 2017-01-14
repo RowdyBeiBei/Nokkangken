@@ -23,6 +23,11 @@ module.exports = (rep, pgp) => {
             rep.none(sql.empty),
 
     add: values =>
-        rep.one(sql.add, values)
+        rep.one(sql.add, values),
+
+    //retrieves all of the user ids (other than that of the active user) for a specific event, doesn't return any additional user info
+    //expects one or many users to be returned, but not zero
+    getEventUsers: values =>
+        rep.many(sql.getEventUsers, values)
   };
 };

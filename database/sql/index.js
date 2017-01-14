@@ -47,7 +47,8 @@ module.exports = {
     create: sql('scheduleds/create.sql'),
     empty: sql('scheduleds/empty.sql'),
     drop: sql('scheduleds/drop.sql'),
-    add: sql('scheduleds/add.sql')
+    add: sql('scheduleds/add.sql'),
+    getEvents: sql('scheduleds/getEvents.sql')
   },
   users: {
     create: sql('users/create.sql'),
@@ -64,7 +65,8 @@ module.exports = {
     create: sql('users_scheduleds/create.sql'),
     empty: sql('users_scheduleds/empty.sql'),
     drop: sql('users_scheduleds/drop.sql'),
-    add: sql('users_scheduleds/add.sql')
+    add: sql('users_scheduleds/add.sql'),
+    getEventUsers: sql('users_scheduleds/getEventUsers.sql')
   }
   
 
