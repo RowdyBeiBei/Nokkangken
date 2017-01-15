@@ -29,7 +29,7 @@ class Scheduled extends React.Component {
           <div key={index} className='scheduledEntry'>
             <img className='scheduledImg scheduledEntryItem' src='https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg'/>
             <div className='scheduledEntryItem'>
-              <h2><time>{moment.unix(scheduled.date).format('llll')}</time></h2>
+              <h3><time className='time'>{moment.unix(scheduled.scheduledtime).format('llll')}</time></h3>
               <p>You have a date with <strong className='name'>{`lisa`}</strong> at <strong className='businessid'>{scheduled.businessid}</strong></p>
             </div>
           </div>

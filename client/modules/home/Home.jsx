@@ -77,8 +77,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-md-8 col-md-offset-2">
+        <div className="row homeConsoleRow">
+          <div className="col-md-8 col-md-offset-2 homeConsole">
             <div className="card hovercard">
               <div className="cardheader">
               </div>

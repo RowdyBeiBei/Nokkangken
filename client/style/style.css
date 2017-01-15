@@ -291,10 +291,17 @@ body {
 .scheduledEntry {
   border: thin solid black;
   border-radius: 5px;
-  margin: 5px;
+  margin-top: 15px;
   text-align: left;
   display: inline-flex;
   width: 80%;
+  box-shadow: 0 0 4px black
+
+}
+
+.scheduledFeed {
+  height: 40vh;
+  overflow: scroll;
 }
 
 img.scheduledImg {
@@ -311,6 +318,22 @@ div.scheduledEntryItem {
   margin: auto;
 }
 
-.scheduledEntryItem strong {
-  color: #FF5621;
+.scheduledEntryItem strong,
+.scheduledEntryItem .time {
+  color: #F38D1F;
+}
+
+.time,
+.name,
+.businessid {
+  font-family: 'Kavoon', cursive;
+}
+
+.homeConsoleRow {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homeConsole {
+  height: 80%;
 }

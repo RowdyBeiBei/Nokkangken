@@ -19,6 +19,8 @@ class AllProspectiveMatches extends React.Component {
   }
 
   responseRequest(wouldJoin, userId, eventTime, prospectId, businessId) {
+    console.log(arguments);
+
     return axios.post('/api/response', {
       wouldJoin: wouldJoin,
       userId: userId,

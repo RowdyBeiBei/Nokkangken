@@ -16,7 +16,7 @@ class CalendarSelector extends React.Component {
     if(this.props.allProspectiveMatches.isFetching === false && this.props.allProspectiveMatches.allProspectiveMatches !== prevProps.allProspectiveMatches.allProspectiveMatchesgit ) {
       let calendarGridItems = document.querySelectorAll('.Calendar-grid-item');
       this.possibleMatchDayGenerator().forEach((possibleDay) => {
-        calendarGridItems[possibleDay - 1].style.backgroundColor = 'blue';
+        calendarGridItems[possibleDay - 1].style.backgroundColor = '#6669CF';
       });
     }
   }
