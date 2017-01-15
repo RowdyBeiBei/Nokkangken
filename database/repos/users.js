@@ -44,7 +44,11 @@ module.exports = (rep, pgp) => {
     
         //updates an existing user entry--if inputs any are null, will keep current values
     update: values =>
-        rep.none(sql.update, values)
+        rep.none(sql.update, values),
+    
+    //gets all scheduled matches for a single user
+    getAllScheduledMatches: values =>
+        rep.manyOrNone(sql.getAllScheduledMatches, values)
     
             
   };

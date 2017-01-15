@@ -19,5 +19,6 @@ router.post('/response', responseHandler.submitResponse);
 
 router.get('/event/:scheduledId/:userId', eventHandler.getScheduledUsers);
 
+router.get('/scheduleds/:userId', eventHandler.getAllScheduledUsers);
 
 module.exports = router;
