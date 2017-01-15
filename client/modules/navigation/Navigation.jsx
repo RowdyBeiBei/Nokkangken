@@ -13,12 +13,12 @@ class Navigation extends React.Component {
     return (
       <Navbar fixedTop>
         <Navbar.Header>
-          <Navbar.Brand>
+          <Navbar.Brand className="navButton">
             Nokkangken
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem onClick={() => {hashHistory.push('/home');}}>
+          <NavItem  className="navButton" onClick={() => {hashHistory.push('/home');}}>
             Go Home
           </NavItem>
         </Nav>

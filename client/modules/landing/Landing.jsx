@@ -74,7 +74,7 @@ class Landing extends React.Component {
 						<button className='pull-right btn mt2 fblogo' onClick={(event) => { this.handleFblogin(event);}}><img src="../assets/facebooklogo.png" alt="" /> Continue with Facebook</button>
 						<div className="hero-container text-center">
 							<h2 className='header'>Meet someone today!</h2>
-		 					<p className='message'>Never hesitate to create some chance for your day. Choose your interests and pick a time. And
+		 					<p className='message'>Never hesitate to create some chances for your day. Choose your interests and pick a time. And
 							we'll setup matches for you.
 							</p>
 							<button className='btn btn-primary mx-auto' onClick={(event) => { this.handleFbSignup(event);}}>Get Started</button>

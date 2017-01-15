@@ -19,7 +19,7 @@ class OptionsModal extends React.Component {
       <div className='modal-container'>
         <Modal show={this.props.showModal} onHide={() => {this.props.toggleModal();}}>
           <Modal.Header>
-            <Modal.Title>This is the modal</Modal.Title>
+            <Modal.Title>Your Scheduled Event and Add Event </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Button block bsStyle='primary'>Scheduled</Button>
