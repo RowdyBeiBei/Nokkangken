@@ -13,19 +13,18 @@ class Landing extends React.Component {
 	handleFblogin(event) {
     const that = this;
     FB.getLoginStatus(function(response){
-			// console.log(response.status);
       if (response.status === 'connected') {
         FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-          that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
-             hashHistory.push('/home')});
-          }
-        );
+					that.props.actions.login(response);
+					 hashHistory.push('/home');
+
+        });
       } else {
         console.log('not connected');
         FB.login(function(response) {
           FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-            that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
-               hashHistory.push('/home')});
+						that.props.actions.login(response);
+  					 hashHistory.push('/home');
         });
      });
      }
@@ -37,14 +36,16 @@ class Landing extends React.Component {
      FB.getLoginStatus(function(response){
        if (response.status === 'connected') {
          FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-					 that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
-							hashHistory.push('/home')});
+					 that.props.actions.login(response);
+ 					 hashHistory.push('/home');
+
          });
        } else {
          console.log('not connected')
          FB.login(function(response) {
            FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
-             that.addUser(response).then((response) => {that.props.actions.login(response.data)});
+						that.props.actions.login(response);
+  					 hashHistory.push('/home');
          });
       });
       }
@@ -71,7 +72,7 @@ class Landing extends React.Component {
 				 <div>
 		  	 	<div className='container'>
 						<h1 className='logo pull-left'>Nokkangken</h1>
-						<button className='pull-right btn btn-social-icon btn-facebook mt2'   onClick={(event) => { this.handleFblogin(event);}}> <span className="fa fa-facebook"></span>Continue With Facebook</button>
+						<button className='pull-right btn mt2 fblogo' onClick={(event) => { this.handleFblogin(event);}}><img src="../assets/facebooklogo.png" alt="" /> Continue with Facebook</button>
 						<div className="hero-container text-center">
 							<h2 className='header'>Meet someone today!</h2>
 		 					<p className='message'>Never hesitate to create some chance for your day. Choose your interests and pick a time. And

@@ -18,6 +18,7 @@ const store = configureStore();
 
 const root = document.getElementById('app');
 
+
 ReactDOM.render(
   <Provider store={store}>
      <Router history={hashHistory}>
@@ -26,7 +27,7 @@ ReactDOM.render(
        </Route>
        <Route path='/home' component={App}>
         <IndexRoute component={Home}/>
-        <Route path='/locations' component={Locations}/>
+        <Route path='/locations' component={Locations} />
         <Route path='/selectedLocation' component={SelectedLocation}/>
         <Route path='/prospectiveMatches' component={ProspectiveMatches}/>
         <Route path='/allProspectiveMatches' component={AllProspectiveMatches}/>

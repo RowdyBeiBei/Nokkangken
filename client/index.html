@@ -22,15 +22,6 @@
           version    : 'v2.8'
         });
 
-
-        FB.getLoginStatus(function(response){
-          if (response.status === 'connected') {
-            console.log('Logged in.');
-          }
-          else {
-            //FB.login();
-          }
-        });
       };
 
       (function(d, s, id){
@@ -41,8 +32,8 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-    <div id='app'>
-    </div>
+
+    <div id='app'></div>
 
     <script src='client/index.js'></script>
 

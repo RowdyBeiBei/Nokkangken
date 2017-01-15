@@ -21,14 +21,17 @@ body {
     /*font-family: 'Fredoka One', cursive;*/
 }
 
-.fb-login-button{
-  padding: 0px 0px;
-
+.fblogo{
+ background-color:#3b5998;
+ color: white;
 }
 
+.fblogo{
+ background-color:#3b5998;
+ color: white;
+}
 
 .message {
-
     font-size: 30px;
     margin-bottom: 48px;
     /*font-family: 'Source Serif Pro', serif;*/
