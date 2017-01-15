@@ -1,8 +1,8 @@
 var db = require('../../../database').db;
 
-//receives a users preference about another user, checks for matches, if match found, creates scheduled event
+// receives a users preference about another user, checks for matches, if match found, creates scheduled event
 // input format {wouldJoin: wouldJoin, userId: id(current user), eventTime: eventTime, prospectId: id(of person being voted on),
-//  businessId: businessId(the location they will meet at if matched, returned as part of the query when matches are found) }
+// businessId: businessId(the location they will meet at if matched, returned as part of the query when matches are found) }
 exports.submitResponse = (req, res) => {
     db.tx(function *(t) => {
 
@@ -11,10 +11,11 @@ exports.submitResponse = (req, res) => {
         let match = yield t.users.checkMatch({userId: +req.body.userId, eventTime: +req.body.eventTime});
 
         if (!match) {
-            //if no match is found, return without doing anything;
+            // if no match is found, return without doing anything;
             return 'No Match Found';
         }
 
+        // if a match is found, an event needs to be scheduled, users need to be referenced to it and relevant possible events need to be deleted.
         let scheduled = yield t.scheduleds.add({eventTime: +req.body.eventTime, businessId: req.body.businessId});
 
         let batch = yield t.batch([
