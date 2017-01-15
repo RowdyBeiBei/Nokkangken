@@ -224,10 +224,6 @@ body {
    border-radius: 5px;
  }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> [add](client) scheduled matches component {nwf}
 .prospectiveMatchView {
   margin-top: 5%;
   height: 80%;
@@ -250,13 +246,7 @@ body {
   height: 60%;
   width: 40%;
 }
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> [add](client) scheduled matches component {nwf}
 
  .thin {
      max-width:150px;
@@ -297,18 +287,30 @@ body {
  .carousel li:first-child {
      margin: 0;
  }
-<<<<<<< HEAD
-=======
 
 .scheduledEntry {
   border: thin solid black;
   border-radius: 5px;
   margin: 5px;
+  text-align: left;
+  display: inline-flex;
+  width: 80%;
 }
 
-.scheduledImg {
+img.scheduledImg {
   width: 100px;
   height: 100px;
 }
->>>>>>> [add](client) scheduled matches component {nwf}
->>>>>>> [add](client) scheduled matches component {nwf}
+
+.scheduledEntryItem {
+  position: relative;
+  text-align: center;
+}
+
+div.scheduledEntryItem {
+  margin: auto;
+}
+
+.scheduledEntryItem strong {
+  color: #FF5621;
+}
