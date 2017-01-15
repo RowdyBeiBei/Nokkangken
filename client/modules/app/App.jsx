@@ -41,6 +41,9 @@ class App extends React.Component {
     this.props.actions.requestAllProspectiveMatchesSent();
     this.getAllProspectiveMatches(this.props.user.id)
     .then((matches) => {
+      if(matches.data.length === 0) {
+        return;
+      }
       let reducedMatches = matches.data.reduce((init, curr) => {
         return init.concat(curr);
       });

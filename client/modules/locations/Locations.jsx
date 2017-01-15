@@ -51,14 +51,18 @@ class Locations extends React.Component {
   renderNearbyLocationEntries() {
     return this.props.nearbyLocations.nearbyLocations.map((location) => {
       return(
-        <Col md={3} sm={6}>
-          <Thumbnail src={location.image_url}>
-            <h2>{location.name}</h2>
-            <h3>{location.categories[0].title}</h3>
+        <div className="col-md-3 col-sm-6 mb3">
+          <div className="item-image">
+            <Thumbnail src={location.image_url} bsClass='locationThumbnail thumbnail'/>
+          </div>
+
+          <div className="item-content">
+            <h4 className="truncate" title={location.name}>{location.name}</h4>
+            <h5>{location.categories[0].title}</h5>
             <Checkbox className='locationCheckBox' data-business-id={location.name}/>
             <Button onClick={() => {this.setSelectedLocation.call(this, location)}}>Go to selected location</Button>
-          </Thumbnail>
-        </Col>
+          </div>
+        </div>
       );
     }).reduce((init, curr, index) => {
       if(init[init.length - 1].length !== 4) {
@@ -119,7 +123,7 @@ class Locations extends React.Component {
     return (
       <div>
         {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-        <Button onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
+        <Button className="btn btn-primary btn-lg center-block my3" Click={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
           Checkout your possible matches
         </Button>
       </div>

@@ -12,23 +12,30 @@ body {
 .logo {
   font-family: 'Kavoon', cursive;
   font-size: 40px;
-  color: #3260c7;
+  color: white;
+  /*color: #3260c7;*/
 }
 .header {
     font-size: 48px;
     color: white;
     margin-bottom: 24px;
-    /*font-family: 'Fredoka One', cursive;*/
+}
+.navButton {
+  font-family: 'Fredoka One', cursive;
 }
 
-.fb-login-button{
-  padding: 0px 0px;
 
+.fblogo{
+ background-color:#3b5998;
+ color: white;
 }
 
+.fblogo{
+ background-color:#3b5998;
+ color: white;
+}
 
 .message {
-
     font-size: 30px;
     margin-bottom: 48px;
     /*font-family: 'Source Serif Pro', serif;*/
@@ -72,6 +79,28 @@ body {
     height: 32%;
 }
 
+/*Location thumbnail styles*/
+.item-image {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50%;
+  background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: 5px 5px 0 0;
+}
+.item-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.item-content {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 0 5px 5px;
+}
 .img-responsive {
     height: 223.67px;
     width: 336.9px;
@@ -204,6 +233,7 @@ body {
    border-radius: 5px;
  }
 
+<<<<<<< HEAD
 .prospectiveMatchView {
   margin-top: 5%;
   height: 80%;
@@ -226,3 +256,49 @@ body {
   height: 60%;
   width: 40%;
 }
+=======
+
+
+
+
+
+ .thin {
+     max-width:150px;
+ }
+
+ .carousel > .window {
+     overflow: hidden;
+     position: relative;
+     height: 300px;
+ }
+
+ /*
+     This is the item wrapper,
+     it will be animated.
+ */
+ .carousel ul {
+     list-style: none;
+     height: 10000px;
+     top: 0;
+     left: 0;
+     position: absolute;
+     padding: 0px;
+ }
+
+ /*
+     These are the items
+ */
+ .carousel li {
+     margin: 3px 0 0;
+ }
+ .prev, .next {
+     font-size: 30px;
+     width: 100%;
+     position: relative;
+     left: 50%;
+     margin-left: -15px;
+ }
+ .carousel li:first-child {
+     margin: 0;
+ }
+>>>>>>> [styleing](location)location pagr style

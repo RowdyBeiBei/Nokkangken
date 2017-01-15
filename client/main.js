@@ -18,6 +18,7 @@ const store = configureStore();
 
 const root = document.getElementById('app');
 
+
 ReactDOM.render(
   <Provider store={store}>
      <Router history={hashHistory}>
