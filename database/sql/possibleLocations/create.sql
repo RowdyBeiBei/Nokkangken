@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS PossibleLocations
 (
-    id serial PRIMARY KEY,
+    idpl serial PRIMARY KEY,
     businessId text NOT NULL,
-    id_possibles integer REFERENCES Possibles (id) ON DELETE CASCADE
+    id_possibles integer REFERENCES Possibles (idp) ON DELETE CASCADE
 );

@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS  Scheduleds
 (
-    id serial PRIMARY KEY,
+    ids serial PRIMARY KEY,
     scheduledTime bigint NOT NULL,
     businessId text NOT NULL
 

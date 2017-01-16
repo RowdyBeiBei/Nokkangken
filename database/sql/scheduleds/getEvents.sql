@@ -3,5 +3,5 @@
 SELECT * 
 FROM scheduleds as s
 INNER JOIN users_scheduleds as us
-  ON s.id = us.id_scheduled
+  ON s.ids = us.id_scheduled
 WHERE us.id_user = ${userId};

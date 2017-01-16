@@ -2,4 +2,4 @@
 
 INSERT INTO scheduleds (scheduledTime, businessId)
 VALUES (${eventTime}, ${businessId})
-RETURNING id;
+RETURNING ids;
