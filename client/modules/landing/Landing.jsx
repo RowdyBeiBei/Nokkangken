@@ -13,7 +13,6 @@ class Landing extends React.Component {
 	handleFblogin(event) {
     const that = this;
     FB.getLoginStatus(function(response){
-			// console.log(response.status);
       if (response.status === 'connected') {
         FB.api('/me','GET',{fields: 'name,id,picture.width(150).height(150)'}, function(response) {
           that.getUser(response.id).then((response) => {that.props.actions.login(response.data)}).then(() => {
