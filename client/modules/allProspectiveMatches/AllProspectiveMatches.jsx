@@ -25,7 +25,7 @@ class AllProspectiveMatches extends React.Component {
       wouldJoin: wouldJoin,
       userId: userId,
       eventTime: eventTime,
-      prospectId: prospectId,
+      prospectId: 7,
       businessId: businessId
     });
   }
@@ -58,7 +58,7 @@ class AllProspectiveMatches extends React.Component {
   renderLoading() {
     return (
       <Row>
-        <h2>You have no matches at this time</h2>
+        <h2 className='matchesLoading'>You have no matches at this time</h2>
       </Row>
     );
   }

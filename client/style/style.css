@@ -225,6 +225,7 @@ body {
  }
 
 .prospectiveMatchView {
+  overflow: hidden;
   margin-top: 5%;
   height: 80%;
 }
@@ -336,4 +337,15 @@ div.scheduledEntryItem {
 
 .homeConsole {
   height: 80%;
+}
+
+.matchesLoading {
+  margin-top: 30%;
+  overflow: hidden;
+  color: white;
+}
+
+.locationsLoading {
+  margin-top: 40%;
+  margin-left: 40%;
 }

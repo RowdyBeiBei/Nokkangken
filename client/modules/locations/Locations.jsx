@@ -93,7 +93,6 @@ class Locations extends React.Component {
   }
 
   sendPossiblesList(timePreferance, userId, locationsList) {
-    // console.log(possiblesList);
     axios.post('/api/user/possibleEvent', {
       time: timePreferance,
       userId: userId,
@@ -101,9 +100,6 @@ class Locations extends React.Component {
     }).then(() => {
       this.findMatches();
     });
-    // {time: time, facebookId: facebookId, locations: [busId1, busId2...]}
-    // get matches then
-    // redirect to matches page
   }
 
   getProspectiveMatches(userId, time) {
