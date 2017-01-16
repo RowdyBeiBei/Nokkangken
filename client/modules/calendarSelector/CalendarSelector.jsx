@@ -16,7 +16,7 @@ class CalendarSelector extends React.Component {
     if(this.props.allProspectiveMatches.isFetching === false && this.props.allProspectiveMatches.allProspectiveMatches !== prevProps.allProspectiveMatches.allProspectiveMatchesgit ) {
       let calendarGridItems = document.querySelectorAll('.Calendar-grid-item');
       this.possibleMatchDayGenerator().forEach((possibleDay) => {
-        calendarGridItems[possibleDay - 1].style.backgroundColor = 'blue';
+        calendarGridItems[possibleDay - 1].style.backgroundColor = '#6669CF';
       });
     }
   }
@@ -44,7 +44,7 @@ class CalendarSelector extends React.Component {
           onNextMonth={() => this.setState({ date: this.state.date.clone().add(1, 'months')})}
           onPrevMonth={() => this.setState({ date: this.state.date.clone().subtract(1, 'months')})}
           date={this.state.date}
-          onPickDate={(date) => {console.log(date);this.props.setDatePreferance(date);}}
+          onPickDate={(date) => {this.props.setDatePreferance(date);}}
           renderDay={(day) => day.format('D')}
         />
       </div>

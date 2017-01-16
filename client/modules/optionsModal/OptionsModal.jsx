@@ -22,7 +22,6 @@ class OptionsModal extends React.Component {
             <Modal.Title>Your Scheduled Event and Add Event </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Button block bsStyle='primary'>Scheduled</Button>
             <Button block bsStyle='primary' onClick={() => {hashHistory.push('/allProspectiveMatches')}}>Show possible matches</Button>
             <Button block bsStyle='primary' href='#/locations' disabled={this.props.disableAddMeeting}>Add new meeting</Button>
             <div className='timeSelectorDiv'>

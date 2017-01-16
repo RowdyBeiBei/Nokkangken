@@ -18,22 +18,23 @@ class ProspectiveMatches extends React.Component {
     this.props.actions.setActiveProspectiveMatch(this.props.prospectiveMatches.prospectiveMatches.pop());
   }
 
-  repsonseRequest(wouldJoin, userId, eventTime, prospectId) {
+  responseRequest(wouldJoin, userId, eventTime, prospectId, businessId) {
     return axios.post('/api/response', {
       wouldJoin: wouldJoin,
       userId: userId,
       eventTime: eventTime,
-      prospectId: prospectId
+      prospectId: 7,
+      businessId: businessId
     });
   }
 
-  triggerMatching(prospectId) {
-    this.responseRequest(true, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
+  triggerMatching() {
+    this.responseRequest(true, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessid);
     this.setActiveProspect();
   }
 
-  triggerDeny(prospectId) {
-    this.reponseRequest(false, this.props.user.id, this.props.timePreferance, this.props.activeProspectiveMatch.id);
+  triggerDeny() {
+    this.reponseRequest(false, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessId);
     this.setActiveProspect();
   }
 
@@ -53,10 +54,9 @@ class ProspectiveMatches extends React.Component {
   }
 
   renderLoading() {
-    console.log('loading');
     return (
       <Row>
-        <h2>You have no matches at this time</h2>
+        <h2 className='matchesLoading'>You have no matches at this time</h2>
       </Row>
     );
   }

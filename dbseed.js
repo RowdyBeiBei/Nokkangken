@@ -10,8 +10,8 @@ db.tx(function (t) {
     t.users_scheduleds.empty(),
     t.users.init(),
     t.possibles.init(),
-    t.possibleLocations.init()
-    // t.responses.init()
+    t.possibleLocations.init(),
+    t.responses.init()
   ]);
 })
   .then(function (data) {

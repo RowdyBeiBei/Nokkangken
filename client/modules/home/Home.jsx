@@ -5,9 +5,10 @@ import {bindActionCreators} from 'redux';
 import {Link, hashHistory} from 'react-router';
 import axios from 'axios';
 import CalendarSelector from '../calendarSelector/CalendarSelector.jsx';
-// import Calendar from '../calendar/Calendar.jsx';
 import OptionsModal from '../optionsModal/OptionsModal.jsx';
 import moment from 'moment';
+import Scheduled from '../scheduled/Scheduled.jsx';
+
 
 
 class Home extends React.Component {
@@ -76,8 +77,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-md-8 col-md-offset-2">
+        <div className="row homeConsoleRow">
+          <div className="col-md-8 col-md-offset-2 homeConsole">
             <div className="card hovercard">
               <div className="cardheader">
               </div>
@@ -89,7 +90,6 @@ class Home extends React.Component {
                 <div className="desc">{this.props.user.bio}</div>
               </div>
               <div>
-                {/* <Calendar/> */}
                 <CalendarSelector
                    timePreferance={this.state.timePreferance}
                    toggleModal={this.toggleModal.bind(this)}
@@ -100,6 +100,7 @@ class Home extends React.Component {
                    allProspectiveMatches={this.props.allProspectiveMatches}
                  />
               </div>
+              <Scheduled/>
             </div>
           </div>
         </div>

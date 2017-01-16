@@ -39,6 +39,7 @@ class SelectedLocation extends React.Component {
                     </ul>
                   </div>
                   <a className="next"><span className="glyphicon glyphicon-chevron-down"></span></a>
+
                 </div>
               </div>
 
