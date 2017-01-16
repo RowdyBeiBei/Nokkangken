@@ -12,6 +12,10 @@ class Scheduled extends React.Component {
     this.setScheduledMatches();
   }
 
+  conponentDidUpdate() {
+    this.setScheduledMatches();
+  }
+
   setScheduledMatches() {
     this.props.actions.setScheduledMatchesSent();
     this.getScheduledMatches(this.props.user.idu).then((scheduleds) => {
@@ -20,17 +24,17 @@ class Scheduled extends React.Component {
   }
 
   getScheduledMatches(userId) {
-    return axios.get(`/api/user/scheduleds/${userId}`);
+    return axios.get(`/api/scheduleds/${userId}`);
   }
 
   renderScheduledMatches() {
     return this.props.scheduledMatches.scheduledMatches.map((scheduled, index) => {
       return (
           <div key={index} className='scheduledEntry'>
-            <img className='scheduledImg scheduledEntryItem' src='https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg'/>
+            <img className='scheduledImg scheduledEntryItem' src={scheduled.picture}/>
             <div className='scheduledEntryItem'>
               <h3><time className='time'>{moment.unix(scheduled.scheduledtime).format('llll')}</time></h3>
-              <p>You have a date with <strong className='name'>{`lisa`}</strong> at <strong className='businessid'>{scheduled.businessid}</strong></p>
+              <p>You have a date with <strong className='name'>{scheduled.name}</strong> at <strong className='businessid'>{scheduled.businessid}</strong></p>
             </div>
           </div>
       );

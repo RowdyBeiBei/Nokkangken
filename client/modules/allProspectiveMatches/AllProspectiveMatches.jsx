@@ -25,18 +25,18 @@ class AllProspectiveMatches extends React.Component {
       wouldJoin: wouldJoin,
       userId: userId,
       eventTime: eventTime,
-      prospectId: 7,
+      prospectId: prospectId,
       businessId: businessId
     });
   }
 
   triggerMatching() {
-    this.responseRequest(true, this.props.user.id, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.id, this.props.activeProspectiveMatch.activeProspectiveMatch.businessid);
+    this.responseRequest(true, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessid);
     this.setActiveProspect();
   }
 
   triggerDeny() {
-    this.reponseRequest(false, this.props.user.id, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.id, this.props.activeProspectiveMatch.activeProspectiveMatch.businessId);
+    this.reponseRequest(false, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessId);
     this.setActiveProspect();
   }
 

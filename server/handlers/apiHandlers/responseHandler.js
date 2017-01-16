@@ -3,7 +3,15 @@ var db = require('../../../database').db;
 //receives a users preference about another user, checks for matches, if match found, creates scheduled event
 // input format {wouldJoin: wouldJoin, userId: id(current user), eventTime: eventTime, prospectId: id(of person being voted on),
   //  businessId: businessId(the location they will meet at if matched, returned as part of the query when matches are found) }
+  // {
+  // wouldJoin: true,
+  // userId: 7,
+  // eventTime: '1485759600',
+  // prospectId: 7,
+  // businessId: 'Happy Donuts'
+// }
 exports.submitResponse = (req, res) => {
+  console.log(req.body);
   db.tx(t=>{
     return t.responses.add({wouldJoin: req.body.wouldJoin, userId: +req.body.userId, eventTime: +req.body.eventTime, prospectId: +req.body.prospectId})
       .then(() => {

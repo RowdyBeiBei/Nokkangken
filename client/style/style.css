@@ -301,13 +301,14 @@ body {
 }
 
 .scheduledFeed {
-  height: 40vh;
+  height: 35vh;
   overflow: scroll;
 }
 
 img.scheduledImg {
   width: 100px;
   height: 100px;
+  border-radius: 5px 0 0 5px;
 }
 
 .scheduledEntryItem {

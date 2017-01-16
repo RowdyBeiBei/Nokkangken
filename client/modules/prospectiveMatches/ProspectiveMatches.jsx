@@ -29,12 +29,12 @@ class ProspectiveMatches extends React.Component {
   }
 
   triggerMatching() {
-    this.responseRequest(true, this.props.user.id, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.id, this.props.activeProspectiveMatch.activeProspectiveMatch.businessid);
+    this.responseRequest(true, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessid);
     this.setActiveProspect();
   }
 
   triggerDeny() {
-    this.reponseRequest(false, this.props.user.id, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.id, this.props.activeProspectiveMatch.activeProspectiveMatch.businessId);
+    this.reponseRequest(false, this.props.user.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.possibletime, this.props.activeProspectiveMatch.activeProspectiveMatch.idu, this.props.activeProspectiveMatch.activeProspectiveMatch.businessId);
     this.setActiveProspect();
   }
 
@@ -54,7 +54,6 @@ class ProspectiveMatches extends React.Component {
   }
 
   renderLoading() {
-    console.log('loading');
     return (
       <Row>
         <h2 className='matchesLoading'>You have no matches at this time</h2>
