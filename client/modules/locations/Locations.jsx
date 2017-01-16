@@ -76,7 +76,7 @@ class Locations extends React.Component {
 
   renderLoading() {
     return (
-      <div>
+      <div className="mt4 mx-auto">
         <Loading type='spokes'/>
       </div>
     );
@@ -123,7 +123,7 @@ class Locations extends React.Component {
     return (
       <div>
         {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-        <Button className="btn btn-primary btn-lg center-block my3" Click={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
+        <Button className="btn btn-primary btn-lg center-block my3" onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
           Checkout your possible matches
         </Button>
       </div>

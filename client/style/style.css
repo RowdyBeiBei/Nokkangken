@@ -6,14 +6,14 @@ body {
     background-position: center center;
     background-attachment: fixed;
     width: 100vw;
-    height: 100vh;
 }
 
 .logo {
   font-family: 'Kavoon', cursive;
-  font-size: 40px;
-  color: white;
-  /*color: #3260c7;*/
+  font-size: 48px;
+  -webkit-text-stroke: 2px beige;
+  /*letter-spacing: 3px;*/
+  color: #3260c7;
 }
 .header {
     font-size: 48px;
@@ -23,7 +23,11 @@ body {
 .navButton {
   font-family: 'Fredoka One', cursive;
 }
-
+.detailed-info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
 
 .fblogo{
  background-color:#3b5998;
@@ -45,6 +49,10 @@ body {
 .btn {
     font-family: 'Baloo Thambi', cursive;
 }
+.btn-started {
+  background-color: #3b5998;
+}
+
 
 .hero-container {
     font-family: 'Baloo Thambi', cursive;
@@ -233,7 +241,7 @@ body {
    border-radius: 5px;
  }
 
-<<<<<<< HEAD
+
 .prospectiveMatchView {
   margin-top: 5%;
   height: 80%;
@@ -256,7 +264,6 @@ body {
   height: 60%;
   width: 40%;
 }
-=======
 
 
 
@@ -301,4 +308,3 @@ body {
  .carousel li:first-child {
      margin: 0;
  }
->>>>>>> [styleing](location)location pagr style

@@ -19,7 +19,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.findAllProspectiveMatches();
+    if(this.props.user) {
+      this.findAllProspectiveMatches();
+
+    }
   }
 
   getUserLocation() {
