@@ -31,7 +31,7 @@ exports.addPossibleEvent = (req, res) => {
     return t.possibles.add({eventTime: +req.body.time, userId: +req.body.userId})
       .then(p => {
         return t.batch(req.body.locations.map(businessId => {
-          return t.possibleLocations.add({businessId: businessId, possibleId: p.id});
+          return t.possibleLocations.add({businessId: businessId, possibleId: p.idp});
         }));
       });
   })

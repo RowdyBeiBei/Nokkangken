@@ -7,7 +7,7 @@ exports.getScheduledUsers = (req, res) => {
     return t.user_scheduleds.getEventUsers(req.params)
      .then(users => {
        return t.batch(users.map(user => {
-         return t.users.getUser({userId: user.id});
+         return t.users.getUser({userId: user.idu});
        }));
      });
   })
