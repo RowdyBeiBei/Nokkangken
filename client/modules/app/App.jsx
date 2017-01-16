@@ -42,7 +42,7 @@ class App extends React.Component {
 
   findAllProspectiveMatches() {
     this.props.actions.requestAllProspectiveMatchesSent();
-    this.getAllProspectiveMatches(this.props.user.id)
+    this.getAllProspectiveMatches(this.props.user.idu)
     .then((matches) => {
       if(matches.data.length === 0) {
         return;

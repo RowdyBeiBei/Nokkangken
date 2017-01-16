@@ -108,7 +108,7 @@ class Locations extends React.Component {
 
   findMatches() {
     this.props.actions.requestProspectiveMatchesSent();
-    this.getProspectiveMatches(this.props.user.id, this.props.timePreferance.unix())
+    this.getProspectiveMatches(this.props.user.idu, this.props.timePreferance.unix())
     .then((matches) => {
       this.props.actions.requestProspectiveMatchesRecieved(matches);
       hashHistory.push('/prospectiveMatches');
@@ -119,7 +119,7 @@ class Locations extends React.Component {
     return (
       <div>
         {this.props.nearbyLocations.isFetching ? this.renderLoading() : this.renderNearbyLocations()}
-        <Button className="btn btn-primary btn-lg center-block my3" onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.id, this.renderPossiblesList());}}>
+        <Button className="btn btn-primary btn-lg center-block my3" onClick={() => {this.sendPossiblesList.call(this, this.props.timePreferance.unix(), this.props.user.idu, this.renderPossiblesList());}}>
           Checkout your possible matches
         </Button>
       </div>

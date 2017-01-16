@@ -27,6 +27,7 @@ exports.updateUser = (req, res) => {
 
 //body input is {time: time, userId: userId, locations: [busId1, busId2...]}
 exports.addPossibleEvent = (req, res) => {
+  console.log(req.body);
   db.tx(t=>{
     return t.possibles.add({eventTime: +req.body.time, userId: +req.body.userId})
       .then(p => {

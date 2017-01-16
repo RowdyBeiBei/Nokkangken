@@ -14,7 +14,7 @@ class Scheduled extends React.Component {
 
   setScheduledMatches() {
     this.props.actions.setScheduledMatchesSent();
-    this.getScheduledMatches(this.props.user.id).then((scheduleds) => {
+    this.getScheduledMatches(this.props.user.idu).then((scheduleds) => {
       this.props.actions.setScheduledMatchesRecieved(scheduleds.data);
     });
   }
