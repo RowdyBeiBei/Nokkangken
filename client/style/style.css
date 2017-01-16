@@ -6,14 +6,13 @@ body {
     background-position: center center;
     background-attachment: fixed;
     width: 100vw;
-    height: 100vh;
 }
 
 .logo {
   font-family: 'Kavoon', cursive;
-  font-size: 40px;
-  color: white;
-  /*color: #3260c7;*/
+  font-size: 48px;
+  -webkit-text-stroke: 2px beige;
+  color: #3260c7;
 }
 .header {
     font-size: 48px;
@@ -23,7 +22,11 @@ body {
 .navButton {
   font-family: 'Fredoka One', cursive;
 }
-
+.detailed-info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
 
 .fblogo{
  background-color:#3b5998;
@@ -38,13 +41,15 @@ body {
 .message {
     font-size: 30px;
     margin-bottom: 48px;
-    /*font-family: 'Source Serif Pro', serif;*/
-    /*font-family: 'Righteous', cursive;*/
 }
 
 .btn {
     font-family: 'Baloo Thambi', cursive;
 }
+.btn-started {
+  background-color: #3b5998;
+}
+
 
 .hero-container {
     font-family: 'Baloo Thambi', cursive;
@@ -165,15 +170,6 @@ body {
     background-color: #0d2456 \9 !important;
 }
 
-/*.timeSelector {
-    width: 100%;
-    border: medium solid black;
-    border-radius: 5px;
-    height: 40px;
-    overflow: scroll;
-    margin-top: 1%;
-}*/
-
 .timeOption {
     text-align: center;
     font-size: large;
@@ -189,11 +185,6 @@ body {
   overflow: scroll;
 }
 
-/*.timeOption {
-  text-align: center;
-  font-size: large;
-  margin: 3px;
-}*/
 
 .controlLabel {
   margin-top: 1%;
@@ -233,7 +224,7 @@ body {
    border-radius: 5px;
  }
 
-<<<<<<< HEAD
+
 .prospectiveMatchView {
   margin-top: 5%;
   height: 80%;
@@ -256,7 +247,6 @@ body {
   height: 60%;
   width: 40%;
 }
-=======
 
 
 
@@ -301,4 +291,3 @@ body {
  .carousel li:first-child {
      margin: 0;
  }
->>>>>>> [styleing](location)location pagr style
