@@ -11,6 +11,11 @@ exports.getScheduledUsers = (req, res) => {
        }));
      });
   })
-  .then(data=> res.status(200).send(data))
+  .then(results=> res.status(200).send(results))
   .catch(error=> res.status(404).send(error));
 };
+
+exports.getAllScheduledUsers = (req, res) =>
+  db.users.getAllScheduledMatches(req.params)
+  .then(results => results.status(200).send(results))
+  .catch(error=> res.status(404).send(error));

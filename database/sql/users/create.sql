@@ -5,7 +5,7 @@
 
 CREATE TABLE IF NOT EXISTS Users
 (
-    id serial PRIMARY KEY,
+    idu serial PRIMARY KEY,
     facebook_id bigint UNIQUE NOT NULL, 
     name text NOT NULL,
     email text,
