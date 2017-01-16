@@ -18,16 +18,16 @@ exports.submitResponse = (req, res) => {
           return t.scheduleds.add({eventTime: +req.body.eventTime, businessId: req.body.businessId})
           .then(scheduled => {
             return t.batch([
-              t.users_scheduleds.add({userId: +req.body.userId, scheduledId: scheduled.id}),
-              t.users_scheduleds.add({userId: +req.body.prospectId, scheduledId: scheduled.id}),
+              t.users_scheduleds.add({userId: +req.body.userId, scheduledId: scheduled.ids}),
+              t.users_scheduleds.add({userId: +req.body.prospectId, scheduledId: scheduled.ids}),
               t.possibles.getAPossible({userId: +req.body.userId, eventTime: +req.body.eventTime}),
               t.possibles.getAPossible({userId: +req.body.prospectId, eventTime: +req.body.eventTime})
             ]);
           })
           .then( data => {
             return t.batch([
-              t.possibles.delete(data[2].id),
-              t.possibles.delete(data[3].id)
+              t.possibles.delete(data[2].idp),
+              t.possibles.delete(data[3].idp)
             ]);
           });
         }
